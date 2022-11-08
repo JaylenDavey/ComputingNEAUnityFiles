@@ -10,7 +10,18 @@ public class board : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log(tileNames[1]);
+        int x = 0;
+        foreach (string tile in tileNames)
+        {
+            x++;
+            Debug.Log(tileNames[x]);
+        }
+        
     }
-    
+
+
+
+
+
+
 }
