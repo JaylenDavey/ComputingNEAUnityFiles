@@ -588,6 +588,106 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
+--- !u!1 &83006327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83006330}
+  - component: {fileID: 83006329}
+  - component: {fileID: 83006328}
+  m_Layer: 0
+  m_Name: Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &83006328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f814b08c8a0240648839a8baa0c6c845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfDoubles: 0
+--- !u!114 &83006329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401e18cd26ea3c645a0452c512b66c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dice: {fileID: 0}
+  tileNumber: 0
+  tileNames:
+  - Pass Go
+  - Old Kent Road
+  - Community Chest
+  - Whitechapel Road
+  - Income Tax
+  - King's Cross Station
+  - The Angel, Islington
+  - Chance
+  - Euston Road
+  - Pentonville Road
+  - Jail
+  - Pall Mall
+  - Electric Company
+  - Whitehall
+  - Northumberland Avenue
+  - Marylebone Station
+  - Bow Street
+  - Community Chest
+  - Malborough Street
+  - Vine Street
+  - Free Parking
+  - Strand
+  - Chance
+  - Fleet Street
+  - Trafalgar Square
+  - Fenchurch Station
+  - Leicester Square
+  - Coventry Street
+  - Water Works
+  - Piccadilly
+  - Go To Jail
+  - Regent Street
+  - Oxford Street
+  - Community Chest
+  - Bond Street
+  - Liverpool Street Station
+  - Chance
+  - Park Lane
+  - Super Tax
+  - Mayfair
+--- !u!4 &83006330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 943.6376, y: 603.48035, z: -4654.705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83258569
 GameObject:
   m_ObjectHideFlags: 0
