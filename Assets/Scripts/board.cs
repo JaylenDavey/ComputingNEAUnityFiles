@@ -14,6 +14,11 @@ public class board : MonoBehaviour
     int x = 0;
 
 
+    private void Start()
+    {
+        
+    }
+    
     void Update()
     {
         while(x < 100)
