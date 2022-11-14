@@ -27,6 +27,7 @@ public class dice : MonoBehaviour
         {
             numberOfDoubles++;
             JailCheck();
+            // When Players Added Give Player Rolling Double Another Turn
             return true;
         }
         else 

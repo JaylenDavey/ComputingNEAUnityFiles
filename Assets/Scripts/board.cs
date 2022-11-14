@@ -11,9 +11,6 @@ public class board : MonoBehaviour
 
     int diceTotal = 0;
 
-    int x = 0;
-
-
     private void Start()
     {
         
@@ -21,12 +18,7 @@ public class board : MonoBehaviour
     
     void Update()
     {
-        while(x < 100)
-        {
-            diceTotal = dice.RollDice();
-            x ++;
-        }
-        
+
     }
 
 
