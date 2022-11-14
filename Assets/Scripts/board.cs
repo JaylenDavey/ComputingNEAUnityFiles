@@ -11,10 +11,12 @@ public class board : MonoBehaviour
 
     int diceTotal = 0;
 
-    void Start()
+    int x = 0;
+
+
+    void Update()
     {
-        int x = 0;
-        while(x < 1000)
+        while(x < 100)
         {
             diceTotal = dice.RollDice();
             x ++;
