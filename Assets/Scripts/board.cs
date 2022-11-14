@@ -17,7 +17,7 @@ public class board : MonoBehaviour
         while(x < 1000)
         {
             diceTotal = dice.RollDice();
-            
+            x ++;
         }
         
     }
