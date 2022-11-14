@@ -8,47 +8,42 @@ public class dice : MonoBehaviour
 
     public int RollDice()
     {
-        int diceRollOne = 0;
-        int diceRollTwo = 0;
+        int rollOne = 0;
+        int rollTwo = 0;
 
-        diceRollOne = Random.Range(1,7);
-        diceRollTwo = Random.Range(1,7);
+        rollOne = Random.Range(1,7);
+        rollTwo = Random.Range(1,7);
 
-        int diceTotal = diceRollOne + diceRollTwo;
+        int rollTotal = rollOne + rollTwo;
+        
+        DoubleCheck(rollOne, rollTwo);
 
-        DoubleCheck(diceRollOne, diceRollTwo);
-
-        Debug.Log(""+diceRollOne+diceRollTwo+DoubleCheck(diceRollOne, diceRollTwo));
-
-        return diceTotal;
+        return rollTotal;
     }
 
     bool DoubleCheck(int dieOne, int dieTwo)
     {
         if(dieOne==dieTwo)
         {
-            numberOfDoubles ++;
-            JailCheck(numberOfDoubles);
+            numberOfDoubles++;
+            JailCheck();
             return true;
         }
-        else
+        else 
+        {
             numberOfDoubles = 0;
             return false;
+        }
+    }   
 
-
-    }
-
-    bool JailCheck(int numberOfDoubles)
+    bool JailCheck()
     {
         if(numberOfDoubles == 3)
         {
-            Debug.LogError($"3 Doubles!!");
+            // When Jail Is Added Add A Function That Puts Player In Jail
+            numberOfDoubles = 0;
             return true;
-            // player goes to jail
         }
-        else
-            return false;
-
+        else return false;
     }
-    
 }
