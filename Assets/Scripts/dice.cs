@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class play : MonoBehaviour
+public class dice : MonoBehaviour
 {
     public int numberOfDoubles = 0;
 
