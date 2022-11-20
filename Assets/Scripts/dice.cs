@@ -15,6 +15,7 @@ public class dice : MonoBehaviour
         int rollTotal = rollOne + rollTwo;
         
         DoubleCheck(rollOne, rollTwo);
+        JailCheck();
 
         return rollTotal;
     }
@@ -24,7 +25,6 @@ public class dice : MonoBehaviour
         if(dieOne==dieTwo)
         {
             numberOfDoubles++;
-            JailCheck();
             // When Players Added Give Player Rolling Double Another Turn
             return true;
         }
