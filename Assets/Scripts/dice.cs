@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class dice : MonoBehaviour
 {
+    public board board;
+    public turns turns;
+
     public int numberOfDoubles = 0;
 
     public int RollDice()
