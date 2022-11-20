@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class turns : MonoBehaviour
 {
+    public dice dice;
+    public board board;
+
     int totalPlayers = 4;
     int currentPlayerTurn = 1;
 
