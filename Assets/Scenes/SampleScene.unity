@@ -527,6 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f814b08c8a0240648839a8baa0c6c845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  board: {fileID: 0}
+  turns: {fileID: 0}
   numberOfDoubles: 0
 --- !u!114 &83006329
 MonoBehaviour:
@@ -541,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
+  turns: {fileID: 0}
   tileNumber: 0
   tileNames:
   - Pass Go
