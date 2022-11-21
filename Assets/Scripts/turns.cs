@@ -8,12 +8,12 @@ public class turns : MonoBehaviour
     int totalPlayers = 4;
     int currentPlayerTurn = 1;
     int currentPlayerForsArrays = 0;
+
+    int x = 0;
     
     void Start()
     {
-        debug.Log(board.playerPositions[0])
-        debug.Log(board.tileNames[board.playerPositions])
-        int x = 0
+
     }
 
     void Update()
@@ -21,9 +21,13 @@ public class turns : MonoBehaviour
         currentPlayerForsArrays = currentPlayerTurn - 1;
         while(x <= 100)
         {
-            dice.RollDice()
-            board.playerPositions[currentPlayerForsArrays]
-            x+=;
+            Debug.Log(board.playerPositions[0]);
+            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForsArrays]]);
+            board.playerPositions[currentPlayerForsArrays] = board.playerPositions[currentPlayerForsArrays] + dice.RollDice();
+            Debug.Log(board.playerPositions[0]);
+            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForsArrays]]);
+
+            x++;
         }
     }
 
@@ -73,9 +77,10 @@ public class turns : MonoBehaviour
 
     }
 
-    int PlayerTileInformation()
+    string PlayerTileInformation()
     {
-
+        string tileType = "Pass Go";
+        return tileType;
     }
 
     void PlayerActions()
@@ -96,7 +101,7 @@ public class turns : MonoBehaviour
         }
         else
         {
-            currentPlayerTurn +=;
+            currentPlayerTurn ++;
         }
     }
 

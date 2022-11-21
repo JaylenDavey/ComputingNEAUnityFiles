@@ -20,6 +20,8 @@ public class dice : MonoBehaviour
         DoubleCheck(rollOne, rollTwo);
         JailCheck();
 
+        Debug.Log(""+rollOne + rollTwo + rollTotal);
+
         return rollTotal;
     }
 
@@ -42,6 +44,7 @@ public class dice : MonoBehaviour
     {
         if(numberOfDoubles == 3)
         {
+            Debug.Log("JAIL!!");
             // When Jail Is Added Add A Function That Puts Player In Jail
             numberOfDoubles = 0;
             return true;
