@@ -7,10 +7,29 @@ public class turns : MonoBehaviour
 
     int totalPlayers = 4;
     int currentPlayerTurn = 1;
+    int currentPlayerForsArrays = 0;
+    
+    void Start()
+    {
+        debug.Log(board.playerPositions[0])
+        debug.Log(board.tileNames[board.playerPositions])
+        int x = 0
+    }
 
+    void Update()
+    {
+        currentPlayerForsArrays = currentPlayerTurn - 1;
+        while(x <= 100)
+        {
+            dice.RollDice()
+            board.playerPositions[currentPlayerForsArrays]
+            x+=;
+        }
+    }
 
     void turn()
     {
+        currentPlayerForsArrays = currentPlayerTurn - 1;
         bool isInJail = InJailCheck();
         JailOptions();
         Upgrade();
@@ -24,7 +43,7 @@ public class turns : MonoBehaviour
     }
 
 
-    public bool InJailCheck()
+    bool InJailCheck()
     {
         return false;
     }
@@ -54,7 +73,7 @@ public class turns : MonoBehaviour
 
     }
 
-    void PlayerTileInformation()
+    int PlayerTileInformation()
     {
 
     }
@@ -71,7 +90,14 @@ public class turns : MonoBehaviour
 
     void DeterminePlayerTurn()
     {
-
+        if(currentPlayerTurn==totalPlayers)
+        {
+            currentPlayerTurn = 1;
+        }
+        else
+        {
+            currentPlayerTurn +=;
+        }
     }
 
 

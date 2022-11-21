@@ -12,9 +12,11 @@ public class board : MonoBehaviour
 
     int diceTotal = 0;
 
+    public int[] playerPositions = new int[] {0,0,0,0,0,0};
+
     private void Start()
     {
-        
+
     }
     
     void Update()
