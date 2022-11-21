@@ -5,9 +5,9 @@ public class turns : MonoBehaviour
     public dice dice;
     public board board;
 
-    int totalPlayers = 4;
-    int currentPlayerTurn = 1;
-    int currentPlayerForsArrays = 0;
+    public int totalPlayers = 6;
+    public int currentPlayerTurn = 1;
+    public int currentPlayerForArrays = 0;
 
     int x = 0;
     
@@ -17,23 +17,23 @@ public class turns : MonoBehaviour
     }
 
     void Update()
-    {
-        currentPlayerForsArrays = currentPlayerTurn - 1;
-        while(x <= 100)
+    {  
+        while(x <= 10)
         {
-            Debug.Log(board.playerPositions[0]);
-            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForsArrays]]);
-            board.playerPositions[currentPlayerForsArrays] = board.playerPositions[currentPlayerForsArrays] + dice.RollDice();
-            Debug.Log(board.playerPositions[0]);
-            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForsArrays]]);
-
+            currentPlayerForArrays = currentPlayerTurn - 1;
+            Debug.Log("-----Player"+currentPlayerTurn+":");
+            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForArrays]]);
+            board.playerPositions[currentPlayerForArrays] = board.playerPositions[currentPlayerForArrays] + dice.RollDice();
+            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForArrays]]);
+            DeterminePlayerTurn();
+            Debug.Log(x+"!!!");
             x++;
         }
     }
 
     void turn()
     {
-        currentPlayerForsArrays = currentPlayerTurn - 1;
+        currentPlayerForArrays = currentPlayerTurn - 1;
         bool isInJail = InJailCheck();
         JailOptions();
         Upgrade();

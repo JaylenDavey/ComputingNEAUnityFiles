@@ -5,7 +5,7 @@ public class dice : MonoBehaviour
     public board board;
     public turns turns;
 
-    public int numberOfDoubles = 0;
+    public int[] numberOfDoubles = new int[] {0,0,0,0,0,0};
 
     public int RollDice()
     {
@@ -29,24 +29,24 @@ public class dice : MonoBehaviour
     {
         if(dieOne==dieTwo)
         {
-            numberOfDoubles++;
+            numberOfDoubles[turns.currentPlayerForArrays]++;
             // When Players Added Give Player Rolling Double Another Turn
             return true;
         }
         else 
         {
-            numberOfDoubles = 0;
+            numberOfDoubles[turns.currentPlayerForArrays] = 0;
             return false;
         }
     }   
 
     bool JailCheck()
     {
-        if(numberOfDoubles == 3)
+        if(numberOfDoubles[turns.currentPlayerForArrays] == 3)
         {
             Debug.Log("JAIL!!");
             // When Jail Is Added Add A Function That Puts Player In Jail
-            numberOfDoubles = 0;
+            numberOfDoubles[turns.currentPlayerForArrays] = 0;
             return true;
         }
         else return false;
