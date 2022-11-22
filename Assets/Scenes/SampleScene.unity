@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 83006330}
   - component: {fileID: 83006329}
   - component: {fileID: 83006328}
+  - component: {fileID: 83006331}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -527,9 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f814b08c8a0240648839a8baa0c6c845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
-  turns: {fileID: 0}
-  numberOfDoubles: 0
+  board: {fileID: 83006329}
+  turns: {fileID: 83006331}
+  numberOfDoubles: 
 --- !u!114 &83006329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,8 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
-  turns: {fileID: 0}
-  tileNumber: 0
+  turns: {fileID: 83006331}
   tileNames:
   - Pass Go
   - Old Kent Road
@@ -586,6 +586,7 @@ MonoBehaviour:
   - Park Lane
   - Super Tax
   - Mayfair
+  playerPositions: 000000000000000000000000000000000000000000000000
 --- !u!4 &83006330
 Transform:
   m_ObjectHideFlags: 0
@@ -600,6 +601,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83006331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8da9d88173d96e47804bb94aab41a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dice: {fileID: 83006328}
+  board: {fileID: 83006329}
+  totalPlayers: 6
+  currentPlayerTurn: 1
+  currentPlayerForArrays: 0
 --- !u!1 &83258569
 GameObject:
   m_ObjectHideFlags: 0
