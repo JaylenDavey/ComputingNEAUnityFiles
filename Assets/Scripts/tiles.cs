@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeMe : MonoBehaviour
+public class tiles : MonoBehaviour
 {
     public board board;
     public dice dice;
