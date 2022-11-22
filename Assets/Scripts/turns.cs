@@ -4,7 +4,6 @@ public class turns : MonoBehaviour
 {
     public dice dice;
     public board board;
-    public tiles tiles;
 
     public int totalPlayers = 6;
     public int currentPlayerTurn = 1;

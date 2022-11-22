@@ -6,12 +6,11 @@ public class board : MonoBehaviour
 {
     public dice dice;
     public turns turns;
-    public tiles tiles;
 
-    public TextAsset tilesJSON;
+    public TextAsset positionsJSON;
 
-    [System.Serializable]
-    public class Tile
+
+    [System.Serializable]public class PositionInfo
     {
         public string name;
         public string type;
@@ -27,22 +26,25 @@ public class board : MonoBehaviour
         public int owner;
     }
 
-    [System.Serializable]
-    public class TileList
+    [System.Serializable]public class PositionList
     {
-        public Tile[] tile;
+        public PositionInfo[] position;
     }
 
-    public TileList tileList = new TileList();
+    public PositionList positionList = new PositionList();
 
+    public int[] playerPositions = new int[] {30,13,5,7,0,0};
+    public bool[] playerIsInJail = new bool[] {false,false,false,false,false,false};
+
+    [ContextMenu("Randomly Move Player")]
     void Start()
     {
-        tileList = JsonUtility.FromJson<TileList>(tilesJSON.text);
+        positionList = JsonUtility.FromJson<PositionList>(positionsJSON.text);
+
+        playerPositions[0] = Random.Range(0,40);
+        Debug.Log(positionList.position[playerPositions[0]].name);
+
     }
-
-
-    public int[] playerPositions = new int[] {0,0,0,0,0,0};
-    public bool[] playerIsInJail = new bool[] {false,false,false,false,false,false};
 
 
 
