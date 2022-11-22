@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 83006329}
   - component: {fileID: 83006328}
   - component: {fileID: 83006331}
+  - component: {fileID: 83006332}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -530,6 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 83006329}
   turns: {fileID: 83006331}
+  tiles: {fileID: 83006332}
   numberOfDoubles: 
 --- !u!114 &83006329
 MonoBehaviour:
@@ -545,48 +547,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
   turns: {fileID: 83006331}
-  tileNames:
-  - Pass Go
-  - Old Kent Road
-  - Community Chest
-  - Whitechapel Road
-  - Income Tax
-  - King's Cross Station
-  - The Angel, Islington
-  - Chance
-  - Euston Road
-  - Pentonville Road
-  - Jail
-  - Pall Mall
-  - Electric Company
-  - Whitehall
-  - Northumberland Avenue
-  - Marylebone Station
-  - Bow Street
-  - Community Chest
-  - Malborough Street
-  - Vine Street
-  - Free Parking
-  - Strand
-  - Chance
-  - Fleet Street
-  - Trafalgar Square
-  - Fenchurch Station
-  - Leicester Square
-  - Coventry Street
-  - Water Works
-  - Piccadilly
-  - Go To Jail
-  - Regent Street
-  - Oxford Street
-  - Community Chest
-  - Bond Street
-  - Liverpool Street Station
-  - Chance
-  - Park Lane
-  - Super Tax
-  - Mayfair
+  tiles: {fileID: 83006332}
+  tilesJSON: {fileID: 4900000, guid: 7e8b3cab3aeceb14da1f2d0a83dc684f, type: 3}
+  tileList:
+    tile: []
   playerPositions: 000000000000000000000000000000000000000000000000
+  playerIsInJail: 000000000000
 --- !u!4 &83006330
 Transform:
   m_ObjectHideFlags: 0
@@ -615,9 +581,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
   board: {fileID: 83006329}
+  tiles: {fileID: 83006332}
   totalPlayers: 6
   currentPlayerTurn: 1
   currentPlayerForArrays: 0
+--- !u!114 &83006332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b297cc983f777439dba1573be26862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
 --- !u!1 &83258569
 GameObject:
   m_ObjectHideFlags: 0
