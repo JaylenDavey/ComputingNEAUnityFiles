@@ -4,6 +4,7 @@ public class turns : MonoBehaviour
 {
     public dice dice;
     public board board;
+    public tiles tiles;
 
     public int totalPlayers = 6;
     public int currentPlayerTurn = 1;
@@ -19,7 +20,7 @@ public class turns : MonoBehaviour
     void turn()
     {
         currentPlayerForArrays = currentPlayerTurn - 1;
-        bool isInJail = InJailCheck();
+        JailCheck();
         JailOptions();
         Upgrade();
         Trade();
@@ -32,55 +33,43 @@ public class turns : MonoBehaviour
     }
 
 
-    bool InJailCheck()
-    {
-        if(board.playerIsInJail)
-        return false;
+    void JailCheck(){
+        if(board.playerIsInJail[currentPlayerForArrays])
+        {
+             
+        }
     }
 
-    void JailOptions()
-    {
-
-    }
-
-    void Upgrade()
-    {
+    void Upgrade(){
 
     }
 
-    void Trade()
-    {
+    void Trade(){
 
     }
 
-    void RollDice()
-    {
+    void RollDice(){
 
     }
 
-    void MovePlayer()
-    {
+    void MovePlayer(){
 
     }
 
-    string PlayerTileInformation()
-    {
+    string PlayerTileInformation(){
         string tileType = "Pass Go";
         return tileType;
     }
 
-    void PlayerActions()
-    {
+    void PlayerActions(){
 
     }
 
-    void CheckForDouble()
-    {
+    void CheckForDouble(){
 
     }
 
-    void DeterminePlayerTurn()
-    {
+    void DeterminePlayerTurn(){
         if(currentPlayerTurn==totalPlayers)
         {
             currentPlayerTurn = 1;

@@ -4,8 +4,17 @@ public class dice : MonoBehaviour
 {
     public board board;
     public turns turns;
+    public tiles tiles;
 
     public int[] numberOfDoubles = new int[] {0,0,0,0,0,0};
+
+    [ContextMenu("Dice Roll")]
+    public void DoSomething()
+    {
+        RollDice();
+    }
+
+
 
     public int RollDice()
     {
