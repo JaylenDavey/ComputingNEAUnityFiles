@@ -10,12 +10,6 @@ public class turns : MonoBehaviour
     public int currentPlayerTurn = 1;
     public int currentPlayerForArrays = 0;
 
-    int x = 0;
-    
-    void Start()
-    {
-
-    }
 
     void turn()
     {
