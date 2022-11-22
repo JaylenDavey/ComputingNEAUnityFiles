@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ChangeMe : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public board board;
+    public dice dice;
+    public turns turns;
+    public tiles tiles;
     
 }

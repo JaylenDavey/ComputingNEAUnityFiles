@@ -28,6 +28,7 @@ public class turns : MonoBehaviour
         MovePlayer();
         PlayerTileInformation();
         PlayerActions();
+        WinConditionCheck();
         CheckForDouble();
         DeterminePlayerTurn();
     }
@@ -62,6 +63,10 @@ public class turns : MonoBehaviour
     }
 
     void PlayerActions(){
+
+    }
+
+    void WinConditionCheck(){
 
     }
 
