@@ -15,7 +15,6 @@ public class turns : MonoBehaviour
     {
         currentPlayerForArrays = currentPlayerTurn - 1;
         JailCheck();
-        JailOptions();
         Upgrade();
         Trade();
         RollDice();
@@ -31,8 +30,13 @@ public class turns : MonoBehaviour
     void JailCheck(){
         if(board.playerIsInJail[currentPlayerForArrays])
         {
-             
+            JailOptions(); 
         }
+    }
+
+    void JailOptions()
+    {
+
     }
 
     void Upgrade(){

@@ -7,6 +7,5 @@ public class tiles : MonoBehaviour
     public board board;
     public dice dice;
     public turns turns;
-    public tiles tiles;
     
 }
