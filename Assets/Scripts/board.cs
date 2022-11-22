@@ -12,6 +12,7 @@ public class board : MonoBehaviour
     int diceTotal = 0;
 
     public int[] playerPositions = new int[] {0,0,0,0,0,0};
+    public bool[] playerIsInJail = new bool[] {false,false,false,false,false,false};
 
     private void Start()
     {

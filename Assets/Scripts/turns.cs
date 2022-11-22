@@ -16,21 +16,6 @@ public class turns : MonoBehaviour
 
     }
 
-    void Update()
-    {  
-        while(x <= 10)
-        {
-            currentPlayerForArrays = currentPlayerTurn - 1;
-            Debug.Log("-----Player"+currentPlayerTurn+":");
-            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForArrays]]);
-            board.playerPositions[currentPlayerForArrays] = board.playerPositions[currentPlayerForArrays] + dice.RollDice();
-            Debug.Log(board.tileNames[board.playerPositions[currentPlayerForArrays]]);
-            DeterminePlayerTurn();
-            Debug.Log(x+"!!!");
-            x++;
-        }
-    }
-
     void turn()
     {
         currentPlayerForArrays = currentPlayerTurn - 1;
@@ -49,6 +34,7 @@ public class turns : MonoBehaviour
 
     bool InJailCheck()
     {
+        if(board.playerIsInJail)
         return false;
     }
 
