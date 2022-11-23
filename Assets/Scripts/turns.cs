@@ -31,7 +31,7 @@ public class turns : MonoBehaviour
 
 
     void JailCheck(){
-        if(board.playerIsInJail[currentPlayerForArrays])
+        if(playerIsInJail[currentPlayerForArrays])
         {
             JailOptions(); 
         }

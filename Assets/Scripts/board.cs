@@ -37,9 +37,8 @@ public class board : MonoBehaviour
     {
         positionList = JsonUtility.FromJson<PositionList>(positionsJSON.text);
 
-        playerPositions[0] = Random.Range(0,40);
-        Debug.Log(positionList.position[playerPositions[0]].name);
-
+        turns.playerPositions[0] = Random.Range(0,40);
+        Debug.Log(positionList.position[turns.playerPositions[0]].name);
     }
 
 
