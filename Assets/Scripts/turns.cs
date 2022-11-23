@@ -7,7 +7,11 @@ public class turns : MonoBehaviour
 
     public int totalPlayers = 6;
     public int currentPlayerTurn = 1;
+    public int nextPlayerTurn = 2;
     public int currentPlayerForArrays = 0;
+
+    public int[] playerPositions = new int[] {0,0,0,0,0,0};
+    public bool[] playerIsInJail = new bool[] {false,false,false,false,false,false};
 
 
     void turn()
@@ -35,7 +39,7 @@ public class turns : MonoBehaviour
 
     void JailOptions()
     {
-
+        
     }
 
     void Upgrade(){
