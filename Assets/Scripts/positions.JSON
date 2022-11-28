@@ -12,7 +12,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -26,7 +27,8 @@
             "rentFourHouse": 160,
             "rentHotel": 250,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Community Chest",
@@ -40,7 +42,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -54,7 +57,8 @@
             "rentFourHouse": 320,
             "rentHotel": 450,
             "isOwned": true,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Tax",
@@ -68,7 +72,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -82,7 +87,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -96,7 +102,8 @@
             "rentFourHouse": 400,
             "rentHotel": 550,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Chance",
@@ -110,7 +117,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -124,7 +132,8 @@
             "rentFourHouse": 400,
             "rentHotel": 550,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -138,7 +147,8 @@
             "rentFourHouse": 450,
             "rentHotel": 600,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Jail",
@@ -152,7 +162,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -166,7 +177,8 @@
             "rentFourHouse": 625,
             "rentHotel": 750,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -180,7 +192,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -194,7 +207,8 @@
             "rentFourHouse": 625,
             "rentHotel": 750,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -208,7 +222,8 @@
             "rentFourHouse": 700,
             "rentHotel": 900,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -222,7 +237,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -236,7 +252,8 @@
             "rentFourHouse": 750,
             "rentHotel": 950,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Community Chest",
@@ -250,7 +267,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -264,7 +282,8 @@
             "rentFourHouse": 750,
             "rentHotel": 950,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -278,7 +297,8 @@
             "rentFourHouse": 800,
             "rentHotel": 1000,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Free Parking",
@@ -292,7 +312,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -306,7 +327,8 @@
             "rentFourHouse": 800,
             "rentHotel": 1050,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Chance",
@@ -320,7 +342,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -334,7 +357,8 @@
             "rentFourHouse": 800,
             "rentHotel": 1050,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -348,7 +372,8 @@
             "rentFourHouse": 925,
             "rentHotel": 1100,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -362,7 +387,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -376,7 +402,8 @@
             "rentFourHouse": 975,
             "rentHotel": 1150,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -390,7 +417,8 @@
             "rentFourHouse": 975,
             "rentHotel": 1150,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -404,7 +432,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -418,7 +447,8 @@
             "rentFourHouse": 1025,
             "rentHotel": 1200,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Go To Jail",
@@ -432,7 +462,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -446,7 +477,8 @@
             "rentFourHouse": 1100,
             "rentHotel": 1275,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -460,7 +492,8 @@
             "rentFourHouse": 1100,
             "rentHotel": 1275,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Community Chest",
@@ -474,7 +507,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -488,7 +522,8 @@
             "rentFourHouse": 1200,
             "rentHotel": 1400,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -502,7 +537,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Chance",
@@ -516,7 +552,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -530,7 +567,8 @@
             "rentFourHouse": 1300,
             "rentHotel": 1500,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         },
         {
             "type": "Tax",
@@ -544,7 +582,8 @@
             "rentFourHouse": null,
             "rentHotel": null,
             "isOwned": true,
-            "owner": 6
+            "owner": 6,
+            "housesNumber": 0
         },
         {
             "type": "Property",
@@ -558,7 +597,8 @@
             "rentFourHouse": 1700,
             "rentHotel": 2000,
             "isOwned": false,
-            "owner": 0
+            "owner": 0,
+            "housesNumber": 0
         }
     ]
 }
