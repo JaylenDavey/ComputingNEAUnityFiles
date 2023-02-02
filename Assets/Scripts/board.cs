@@ -6,7 +6,10 @@ public class board : MonoBehaviour
 {
     public dice dice;
     public turns turns;
-
+    public GameObject playerOne;
+    public GameObject playerTwo;
+    public GameObject playerThree;
+    public GameObject playerFour;
     public TextAsset positionsJSON;
 
     [System.Serializable]public class PositionInfo
@@ -23,6 +26,8 @@ public class board : MonoBehaviour
         public int rentHotel;
         public bool isOwned;
         public int owner;
+        public int tileXPos;
+        public int tileYPos;
     }
 
     [System.Serializable]public class PositionList
@@ -35,10 +40,16 @@ public class board : MonoBehaviour
     [ContextMenu("Randomly Move Player")]
     void Start()
     {
+        GameObject[] playerCounterArray = new GameObject[] {playerOne,playerTwo,playerThree,playerFour};
         positionList = JsonUtility.FromJson<PositionList>(positionsJSON.text);
 
         turns.playerPositions[0] = Random.Range(0,40);
+
         Debug.Log(positionList.position[turns.playerPositions[0]].name);
+
+        playerCounterArray[turns.currentPlayerForArrays].transform.localPosition = new Vector2(positionList.position[turns.playerPositions[0]].tileXPos,positionList.position[turns.playerPositions[0]].tileYPos);
+        
+        Debug.Log(new Vector2(positionList.position[turns.playerPositions[0]].tileXPos,positionList.position[turns.playerPositions[0]].tileYPos));
     }
 
 

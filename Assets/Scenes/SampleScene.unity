@@ -198,6 +198,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6354507}
   m_CullTransparentMesh: 1
+--- !u!1 &6572417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6572418}
+  m_Layer: 5
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6572418
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6572417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 18283355}
+  - {fileID: 650698810}
+  - {fileID: 645678601}
+  - {fileID: 2131051461}
+  m_Father: {fileID: 374542973}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &17761628
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +311,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17761628}
+  m_CullTransparentMesh: 1
+--- !u!1 &18283354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18283355}
+  - component: {fileID: 18283357}
+  - component: {fileID: 18283356}
+  m_Layer: 5
+  m_Name: Player1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &18283355
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18283354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6572418}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -320, y: -430}
+  m_SizeDelta: {x: 100, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &18283356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18283354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &18283357
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18283354}
   m_CullTransparentMesh: 1
 --- !u!1 &29122127
 GameObject:
@@ -545,11 +659,573 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
   turns: {fileID: 83006331}
+  playerOne: {fileID: 18283354}
+  playerTwo: {fileID: 650698809}
+  playerThree: {fileID: 645678600}
+  playerFour: {fileID: 2131051458}
   positionsJSON: {fileID: 4900000, guid: 89b42bfeba78ba4429428f80e54782fe, type: 3}
   positionList:
-    position: []
-  playerPositions: 000000000000000000000000000000000000000000000000
-  playerIsInJail: 000000000000
+    position:
+    - name: Pass Go
+      type: Pass Go
+      rent: -200
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: -430
+    - name: Old Kent Road
+      type: Property
+      rent: 2
+      price: 60
+      housePrice: 50
+      rentOneHouse: 10
+      rentTwoHouse: 30
+      rentThreeHouse: 90
+      rentFourHouse: 160
+      rentHotel: 250
+      isOwned: 0
+      owner: 0
+      tileXPos: 320
+      tileYPos: -430
+    - name: Community Chest
+      type: Community Chest
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 240
+      tileYPos: -430
+    - name: Whitechapel Road
+      type: Property
+      rent: 4
+      price: 60
+      housePrice: 50
+      rentOneHouse: 20
+      rentTwoHouse: 60
+      rentThreeHouse: 180
+      rentFourHouse: 320
+      rentHotel: 450
+      isOwned: 1
+      owner: 0
+      tileXPos: 160
+      tileYPos: -430
+    - name: Income Tax
+      type: Tax
+      rent: 200
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 80
+      tileYPos: -430
+    - name: Kings Cross Station
+      type: Property
+      rent: 0
+      price: 200
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: 0
+      tileYPos: -430
+    - name: The Angel Islington
+      type: Property
+      rent: 6
+      price: 100
+      housePrice: 50
+      rentOneHouse: 30
+      rentTwoHouse: 90
+      rentThreeHouse: 270
+      rentFourHouse: 400
+      rentHotel: 550
+      isOwned: 0
+      owner: 0
+      tileXPos: -80
+      tileYPos: -430
+    - name: Chance
+      type: Chance
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: -160
+      tileYPos: -430
+    - name: Euston Road
+      type: Property
+      rent: 6
+      price: 100
+      housePrice: 50
+      rentOneHouse: 30
+      rentTwoHouse: 90
+      rentThreeHouse: 270
+      rentFourHouse: 400
+      rentHotel: 550
+      isOwned: 0
+      owner: 0
+      tileXPos: -240
+      tileYPos: -430
+    - name: Pentonville Road
+      type: Property
+      rent: 8
+      price: 120
+      housePrice: 50
+      rentOneHouse: 40
+      rentTwoHouse: 100
+      rentThreeHouse: 300
+      rentFourHouse: 450
+      rentHotel: 600
+      isOwned: 0
+      owner: 0
+      tileXPos: -320
+      tileYPos: -430
+    - name: Jail
+      type: Jail
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: -470
+      tileYPos: -460
+    - name: Pall Mall
+      type: Property
+      rent: 10
+      price: 140
+      housePrice: 100
+      rentOneHouse: 50
+      rentTwoHouse: 150
+      rentThreeHouse: 450
+      rentFourHouse: 625
+      rentHotel: 750
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: -320
+    - name: Electric Company
+      type: Property
+      rent: 0
+      price: 150
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: -240
+    - name: Whitehall
+      type: Property
+      rent: 10
+      price: 140
+      housePrice: 100
+      rentOneHouse: 50
+      rentTwoHouse: 150
+      rentThreeHouse: 450
+      rentFourHouse: 625
+      rentHotel: 750
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: -160
+    - name: Northumberland Avenue
+      type: Property
+      rent: 12
+      price: 160
+      housePrice: 100
+      rentOneHouse: 60
+      rentTwoHouse: 180
+      rentThreeHouse: 500
+      rentFourHouse: 700
+      rentHotel: 900
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: -80
+    - name: Marylebone Station
+      type: Property
+      rent: 0
+      price: 200
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: 0
+    - name: Bow Street
+      type: Property
+      rent: 14
+      price: 180
+      housePrice: 100
+      rentOneHouse: 70
+      rentTwoHouse: 200
+      rentThreeHouse: 550
+      rentFourHouse: 750
+      rentHotel: 950
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: 80
+    - name: Community Chest
+      type: Community Chest
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: -430
+      tileYPos: 160
+    - name: Malborough Street
+      type: Property
+      rent: 14
+      price: 180
+      housePrice: 100
+      rentOneHouse: 70
+      rentTwoHouse: 200
+      rentThreeHouse: 550
+      rentFourHouse: 750
+      rentHotel: 950
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: 240
+    - name: Vine Street
+      type: Property
+      rent: 16
+      price: 200
+      housePrice: 100
+      rentOneHouse: 80
+      rentTwoHouse: 220
+      rentThreeHouse: 600
+      rentFourHouse: 800
+      rentHotel: 1000
+      isOwned: 0
+      owner: 0
+      tileXPos: -430
+      tileYPos: 320
+    - name: Free Parking
+      type: Free Parking
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: -430
+    - name: Strand
+      type: Property
+      rent: 18
+      price: 220
+      housePrice: 150
+      rentOneHouse: 90
+      rentTwoHouse: 250
+      rentThreeHouse: 700
+      rentFourHouse: 800
+      rentHotel: 1050
+      isOwned: 0
+      owner: 0
+      tileXPos: -320
+      tileYPos: 430
+    - name: Chance
+      type: Chance
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: -240
+      tileYPos: 430
+    - name: Fleet Street
+      type: Property
+      rent: 18
+      price: 220
+      housePrice: 150
+      rentOneHouse: 90
+      rentTwoHouse: 250
+      rentThreeHouse: 700
+      rentFourHouse: 800
+      rentHotel: 1050
+      isOwned: 0
+      owner: 0
+      tileXPos: -160
+      tileYPos: 430
+    - name: Trafalgar Square
+      type: Property
+      rent: 20
+      price: 240
+      housePrice: 150
+      rentOneHouse: 100
+      rentTwoHouse: 300
+      rentThreeHouse: 750
+      rentFourHouse: 925
+      rentHotel: 1100
+      isOwned: 0
+      owner: 0
+      tileXPos: -80
+      tileYPos: 430
+    - name: Fenchurch St Station
+      type: Property
+      rent: 0
+      price: 200
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: 0
+      tileYPos: 430
+    - name: Leicester Square
+      type: Property
+      rent: 22
+      price: 260
+      housePrice: 150
+      rentOneHouse: 110
+      rentTwoHouse: 330
+      rentThreeHouse: 800
+      rentFourHouse: 975
+      rentHotel: 1150
+      isOwned: 0
+      owner: 0
+      tileXPos: 80
+      tileYPos: 430
+    - name: Coventry Street
+      type: Property
+      rent: 22
+      price: 260
+      housePrice: 150
+      rentOneHouse: 110
+      rentTwoHouse: 330
+      rentThreeHouse: 800
+      rentFourHouse: 975
+      rentHotel: 1150
+      isOwned: 0
+      owner: 0
+      tileXPos: 160
+      tileYPos: 430
+    - name: Water Works
+      type: Property
+      rent: 0
+      price: 150
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: 240
+      tileYPos: 430
+    - name: Piccadilly
+      type: Property
+      rent: 24
+      price: 280
+      housePrice: 150
+      rentOneHouse: 120
+      rentTwoHouse: 360
+      rentThreeHouse: 850
+      rentFourHouse: 1025
+      rentHotel: 1200
+      isOwned: 0
+      owner: 0
+      tileXPos: 320
+      tileYPos: 430
+    - name: Go To Jail
+      type: Go To Jail
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: 430
+    - name: Regent Street
+      type: Property
+      rent: 26
+      price: 300
+      housePrice: 200
+      rentOneHouse: 130
+      rentTwoHouse: 390
+      rentThreeHouse: 900
+      rentFourHouse: 1100
+      rentHotel: 1275
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: 320
+    - name: Oxford Street
+      type: Property
+      rent: 26
+      price: 300
+      housePrice: 200
+      rentOneHouse: 130
+      rentTwoHouse: 390
+      rentThreeHouse: 900
+      rentFourHouse: 1100
+      rentHotel: 1275
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: 240
+    - name: Community Chest
+      type: Community Chest
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: 160
+    - name: Bond Street
+      type: Property
+      rent: 28
+      price: 320
+      housePrice: 200
+      rentOneHouse: 150
+      rentTwoHouse: 450
+      rentThreeHouse: 1000
+      rentFourHouse: 1200
+      rentHotel: 1400
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: 80
+    - name: Liverpool Street Station
+      type: Property
+      rent: 0
+      price: 200
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: 0
+    - name: Chance
+      type: Chance
+      rent: 0
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: -80
+    - name: Park Lane
+      type: Property
+      rent: 35
+      price: 350
+      housePrice: 200
+      rentOneHouse: 175
+      rentTwoHouse: 500
+      rentThreeHouse: 1100
+      rentFourHouse: 1300
+      rentHotel: 1500
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: -160
+    - name: Super Tax
+      type: Tax
+      rent: 100
+      price: 0
+      housePrice: 0
+      rentOneHouse: 0
+      rentTwoHouse: 0
+      rentThreeHouse: 0
+      rentFourHouse: 0
+      rentHotel: 0
+      isOwned: 1
+      owner: 6
+      tileXPos: 430
+      tileYPos: -240
+    - name: Mayfair
+      type: Property
+      rent: 50
+      price: 400
+      housePrice: 200
+      rentOneHouse: 200
+      rentTwoHouse: 600
+      rentThreeHouse: 1400
+      rentFourHouse: 1700
+      rentHotel: 2000
+      isOwned: 0
+      owner: 0
+      tileXPos: 430
+      tileYPos: -320
 --- !u!4 &83006330
 Transform:
   m_ObjectHideFlags: 0
@@ -580,7 +1256,10 @@ MonoBehaviour:
   board: {fileID: 83006329}
   totalPlayers: 6
   currentPlayerTurn: 1
+  nextPlayerTurn: 2
   currentPlayerForArrays: 0
+  playerPositions: 090000000000000000000000000000000000000000000000
+  playerIsInJail: 000000000000
 --- !u!1 &83258569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +2506,7 @@ RectTransform:
   - {fileID: 1504604350}
   - {fileID: 2139628116}
   - {fileID: 2098224742}
+  - {fileID: 6572418}
   m_Father: {fileID: 168464864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2927,6 +3607,156 @@ RectTransform:
   m_AnchoredPosition: {x: 780, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!1 &645678600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645678601}
+  - component: {fileID: 645678603}
+  - component: {fileID: 645678602}
+  m_Layer: 5
+  m_Name: Player3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &645678601
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645678600}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6572418}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 430, y: -430}
+  m_SizeDelta: {x: 100, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &645678602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645678600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &645678603
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645678600}
+  m_CullTransparentMesh: 1
+--- !u!1 &650698809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 650698810}
+  - component: {fileID: 650698812}
+  - component: {fileID: 650698811}
+  m_Layer: 5
+  m_Name: Player2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &650698810
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650698809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6572418}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 430, y: -430}
+  m_SizeDelta: {x: 150, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &650698811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650698809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &650698812
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650698809}
+  m_CullTransparentMesh: 1
 --- !u!1 &700240433
 GameObject:
   m_ObjectHideFlags: 0
@@ -9947,6 +10777,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122342248}
   m_CullTransparentMesh: 1
+--- !u!1 &2131051458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2131051461}
+  - component: {fileID: 2131051460}
+  - component: {fileID: 2131051459}
+  m_Layer: 5
+  m_Name: Player4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2131051459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131051458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2131051460
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131051458}
+  m_CullTransparentMesh: 1
+--- !u!224 &2131051461
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131051458}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6572418}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 430, y: -430}
+  m_SizeDelta: {x: 100, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2134114126
 GameObject:
   m_ObjectHideFlags: 0

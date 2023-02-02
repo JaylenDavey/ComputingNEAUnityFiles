@@ -14,8 +14,7 @@ public class turns : MonoBehaviour
     public bool[] playerIsInJail = new bool[] {false,false,false,false,false,false};
 
 
-    void turn()
-    {
+    void turn(){
         currentPlayerForArrays = currentPlayerTurn - 1;
         JailCheck();
         Upgrade();
@@ -37,8 +36,7 @@ public class turns : MonoBehaviour
         }
     }
 
-    void JailOptions()
-    {
+    void JailOptions(){
         
     }
 
