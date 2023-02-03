@@ -6,6 +6,8 @@ public class board : MonoBehaviour
 {
     public dice dice;
     public turns turns;
+    public buttons buttons;
+
     public GameObject playerOne;
     public GameObject playerTwo;
     public GameObject playerThree;
@@ -49,7 +51,6 @@ public class board : MonoBehaviour
 
         playerCounterArray[turns.currentPlayerForArrays].transform.localPosition = new Vector2(positionList.position[turns.playerPositions[0]].tileXPos,positionList.position[turns.playerPositions[0]].tileYPos);
         
-        Debug.Log(new Vector2(positionList.position[turns.playerPositions[0]].tileXPos,positionList.position[turns.playerPositions[0]].tileYPos));
     }
 
 
