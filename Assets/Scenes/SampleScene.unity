@@ -471,6 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35417318}
+  - component: {fileID: 35417319}
   m_Layer: 5
   m_Name: Pass Go
   m_TagString: Untagged
@@ -499,6 +500,23 @@ RectTransform:
   m_AnchoredPosition: {x: 500, y: -500}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &35417319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35417317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 0
 --- !u!1 &56759198
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68286209}
+  - component: {fileID: 68286210}
   m_Layer: 5
   m_Name: Chance
   m_TagString: Untagged
@@ -611,6 +630,23 @@ RectTransform:
   m_AnchoredPosition: {x: 220, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &68286210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68286208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 22
 --- !u!1 &73430742
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Owner: Unowned'
+  m_Text: 'Owner : '
 --- !u!222 &73430745
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -702,6 +738,7 @@ GameObject:
   - component: {fileID: 83006329}
   - component: {fileID: 83006328}
   - component: {fileID: 83006331}
+  - component: {fileID: 83006332}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -723,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 83006329}
   turns: {fileID: 83006331}
-  buttons: {fileID: 0}
+  uiScript: {fileID: 83006332}
   numberOfDoubles: 
 --- !u!114 &83006329
 MonoBehaviour:
@@ -739,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
   turns: {fileID: 83006331}
-  buttons: {fileID: 0}
+  uiScript: {fileID: 83006332}
   playerOne: {fileID: 18283354}
   playerTwo: {fileID: 650698809}
   playerThree: {fileID: 645678600}
@@ -1335,14 +1372,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 83006328}
   board: {fileID: 83006329}
-  buttons: {fileID: 0}
+  uiScript: {fileID: 83006332}
   totalPlayers: 6
   currentPlayerTurn: 1
   nextPlayerTurn: 2
   currentPlayerForArrays: 0
-  playerPositions: 000000000000000000000000000000000000000000000000
-  playerIsInJail: 000000000000
+  playerPositions: 00000000000000000000000000000000
+  playerIsInJail: 00000000
   playerMoney: dc050000dc050000dc050000dc050000
+--- !u!114 &83006332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9ea2dbb4f07a34797493d2ac25b727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  tileName: {fileID: 1753664429}
+  tileType: {fileID: 1187696606}
+  tilePrice: {fileID: 1016159895}
+  tileRent: {fileID: 1778213938}
+  tileOneHouse: {fileID: 1288087222}
+  tileTwoHouse: {fileID: 2089704403}
+  tileThreeHouse: {fileID: 937732051}
+  tileFourHouse: {fileID: 946142601}
+  tileHotel: {fileID: 1493960848}
+  tileUpgradeCost: {fileID: 1411147419}
+  tileOnwer: {fileID: 73430744}
 --- !u!1 &83258569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 130811282}
+  - component: {fileID: 130811283}
   m_Layer: 5
   m_Name: Oxford Street
   m_TagString: Untagged
@@ -1550,6 +1614,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -220}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &130811283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130811281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 32
 --- !u!1 &143203465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323759461}
+  - component: {fileID: 323759462}
   m_Layer: 5
   m_Name: Liverpool Street Station
   m_TagString: Untagged
@@ -2650,6 +2732,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -460}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &323759462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323759460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 35
 --- !u!1 &342880420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 350576207}
+  - component: {fileID: 350576208}
   m_Layer: 5
   m_Name: Old Kent Road
   m_TagString: Untagged
@@ -2763,6 +2863,23 @@ RectTransform:
   m_AnchoredPosition: {x: 860, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &350576208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350576206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 1
 --- !u!1 &359706173
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,6 +3751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479123620}
+  - component: {fileID: 479123621}
   m_Layer: 5
   m_Name: Chance
   m_TagString: Untagged
@@ -3662,6 +3780,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -540}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &479123621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479123619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 36
 --- !u!1 &511399223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +3964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521288518}
+  - component: {fileID: 521288519}
   m_Layer: 5
   m_Name: Electric Company
   m_TagString: Untagged
@@ -3857,6 +3993,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -780}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &521288519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521288517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 12
 --- !u!1 &521768150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,6 +4098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526582180}
+  - component: {fileID: 526582181}
   m_Layer: 5
   m_Name: Community Chest
   m_TagString: Untagged
@@ -3973,6 +4127,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -300}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &526582181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526582179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 33
 --- !u!1 &534828592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,6 +4153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534828593}
+  - component: {fileID: 534828594}
   m_Layer: 5
   m_Name: Chance
   m_TagString: Untagged
@@ -4010,6 +4182,23 @@ RectTransform:
   m_AnchoredPosition: {x: 380, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &534828594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534828592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 7
 --- !u!1 &537606422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,6 +4692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638083312}
+  - component: {fileID: 638083313}
   m_Layer: 5
   m_Name: Community Chest
   m_TagString: Untagged
@@ -4531,6 +4721,23 @@ RectTransform:
   m_AnchoredPosition: {x: 780, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &638083313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638083311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 2
 --- !u!1 &645181730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,6 +5492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 725344385}
+  - component: {fileID: 725344386}
   m_Layer: 5
   m_Name: King's Cross Station
   m_TagString: Untagged
@@ -5313,6 +5521,23 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &725344386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725344384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 5
 --- !u!1 &745713103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 751386638}
+  - component: {fileID: 751386639}
   m_Layer: 5
   m_Name: Pentonville Road
   m_TagString: Untagged
@@ -5471,6 +5697,23 @@ RectTransform:
   m_AnchoredPosition: {x: 220, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &751386639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751386637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 9
 --- !u!1 &755990711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,6 +5723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755990712}
+  - component: {fileID: 755990713}
   m_Layer: 5
   m_Name: Fleet Street
   m_TagString: Untagged
@@ -5508,6 +5752,23 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &755990713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755990711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 23
 --- !u!1 &756111221
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +5871,7 @@ GameObject:
   - component: {fileID: 774685330}
   - component: {fileID: 774685332}
   - component: {fileID: 774685331}
+  - component: {fileID: 774685333}
   m_Layer: 5
   m_Name: Front
   m_TagString: Untagged
@@ -5674,6 +5936,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774685329}
   m_CullTransparentMesh: 1
+--- !u!114 &774685333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774685329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 0
 --- !u!1 &806556328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,6 +6037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820379668}
+  - component: {fileID: 820379669}
   m_Layer: 5
   m_Name: Vine Street
   m_TagString: Untagged
@@ -5786,6 +6066,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -220}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &820379669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820379667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 19
 --- !u!1 &823513954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,6 +6293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857077088}
+  - component: {fileID: 857077089}
   m_Layer: 5
   m_Name: Jail
   m_TagString: Untagged
@@ -6024,6 +6322,23 @@ RectTransform:
   m_AnchoredPosition: {x: -500, y: -500}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &857077089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857077087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 10
 --- !u!1 &862321016
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,6 +6498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 882772841}
+  - component: {fileID: 882772842}
   m_Layer: 5
   m_Name: Whitechapel Road
   m_TagString: Untagged
@@ -6211,6 +6527,23 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &882772842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882772840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 3
 --- !u!1 &891585701
 GameObject:
   m_ObjectHideFlags: 0
@@ -6220,6 +6553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891585702}
+  - component: {fileID: 891585703}
   m_Layer: 5
   m_Name: Fenchurch St Station
   m_TagString: Untagged
@@ -6248,6 +6582,23 @@ RectTransform:
   m_AnchoredPosition: {x: 460, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &891585703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891585701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 25
 --- !u!1 &907691777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6407,6 +6758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937518621}
+  - component: {fileID: 937518622}
   m_Layer: 5
   m_Name: Marlborough Street
   m_TagString: Untagged
@@ -6436,6 +6788,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &937518622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937518620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 18
 --- !u!1 &937732049
 GameObject:
   m_ObjectHideFlags: 0
@@ -6506,7 +6875,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rent With Three Houses: 90'
+  m_Text: 'Rent With Three Houses : '
 --- !u!222 &937732052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6676,7 +7045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rent With Four Houses: 160'
+  m_Text: 'Rent With Four Houses : '
 --- !u!222 &946142602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6845,6 +7214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 961437093}
+  - component: {fileID: 961437094}
   m_Layer: 5
   m_Name: Pall Mall
   m_TagString: Untagged
@@ -6873,6 +7243,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -860}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &961437094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961437092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 11
 --- !u!1 &964291795
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010169215}
+  - component: {fileID: 1010169216}
   m_Layer: 5
   m_Name: Bow Street
   m_TagString: Untagged
@@ -7318,6 +7706,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -460}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1010169216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010169214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 16
 --- !u!1 &1016159893
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Buy Price: 60'
+  m_Text: 'Buy Price : '
 --- !u!222 &1016159896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7481,6 +7886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029298420}
+  - component: {fileID: 1029298421}
   m_Layer: 5
   m_Name: Northumberland Avenue
   m_TagString: Untagged
@@ -7509,6 +7915,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -620}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1029298421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029298419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 14
 --- !u!1 &1044056750
 GameObject:
   m_ObjectHideFlags: 0
@@ -7609,6 +8032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1052156289}
+  - component: {fileID: 1052156290}
   m_Layer: 5
   m_Name: Free Parking
   m_TagString: Untagged
@@ -7637,6 +8061,23 @@ RectTransform:
   m_AnchoredPosition: {x: -430, y: 430}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1052156290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052156288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 20
 --- !u!1 &1062263782
 GameObject:
   m_ObjectHideFlags: 0
@@ -8709,7 +9150,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Property
+  m_Text: 'Type : '
 --- !u!222 &1187696607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8727,6 +9168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1191305824}
+  - component: {fileID: 1191305825}
   m_Layer: 5
   m_Name: Euston Road
   m_TagString: Untagged
@@ -8755,6 +9197,23 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1191305825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191305823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 8
 --- !u!1 &1196661833
 GameObject:
   m_ObjectHideFlags: 0
@@ -9594,7 +10053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rent With One House: 10'
+  m_Text: 'Rent With One House : '
 --- !u!222 &1288087223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9612,6 +10071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1294655787}
+  - component: {fileID: 1294655788}
   m_Layer: 5
   m_Name: Strand
   m_TagString: Untagged
@@ -9640,6 +10100,23 @@ RectTransform:
   m_AnchoredPosition: {x: 140, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1294655788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294655786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 21
 --- !u!1 &1312632919
 GameObject:
   m_ObjectHideFlags: 0
@@ -9649,6 +10126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312632920}
+  - component: {fileID: 1312632921}
   m_Layer: 5
   m_Name: Marylebone Station
   m_TagString: Untagged
@@ -9677,6 +10155,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -540}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1312632921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312632919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 15
 --- !u!1 &1324188032
 GameObject:
   m_ObjectHideFlags: 0
@@ -9777,6 +10272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325665475}
+  - component: {fileID: 1325665476}
   m_Layer: 5
   m_Name: Trafalgar Square
   m_TagString: Untagged
@@ -9805,6 +10301,23 @@ RectTransform:
   m_AnchoredPosition: {x: 380, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1325665476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325665474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 24
 --- !u!1 &1370235796
 GameObject:
   m_ObjectHideFlags: 0
@@ -10055,6 +10568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382872315}
+  - component: {fileID: 1382872316}
   m_Layer: 5
   m_Name: Water Company
   m_TagString: Untagged
@@ -10083,6 +10597,23 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1382872316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382872314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 28
 --- !u!1 &1392297819
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,7 +10834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade Cost: 50'
+  m_Text: 'Upgrade Cost : '
 --- !u!222 &1411147420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10472,6 +11003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1440528813}
+  - component: {fileID: 1440528814}
   m_Layer: 5
   m_Name: Regent Street
   m_TagString: Untagged
@@ -10500,6 +11032,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -140}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1440528814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440528812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 31
 --- !u!1 &1455369926
 GameObject:
   m_ObjectHideFlags: 0
@@ -10600,6 +11149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474569374}
+  - component: {fileID: 1474569375}
   m_Layer: 5
   m_Name: Leicester Square
   m_TagString: Untagged
@@ -10628,6 +11178,23 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1474569375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474569373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 26
 --- !u!1 &1480625149
 GameObject:
   m_ObjectHideFlags: 0
@@ -10864,7 +11431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rent With Hotel: 250'
+  m_Text: 'Rent With Hotel : '
 --- !u!222 &1493960849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10958,6 +11525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504604350}
+  - component: {fileID: 1504604351}
   m_Layer: 5
   m_Name: Park Lane
   m_TagString: Untagged
@@ -10986,6 +11554,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -620}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1504604351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504604349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 37
 --- !u!1 &1506393381
 GameObject:
   m_ObjectHideFlags: 0
@@ -11145,6 +11730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520755324}
+  - component: {fileID: 1520755325}
   m_Layer: 5
   m_Name: The Angel Islington
   m_TagString: Untagged
@@ -11173,6 +11759,23 @@ RectTransform:
   m_AnchoredPosition: {x: 460, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1520755325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520755323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 6
 --- !u!1 &1545267609
 GameObject:
   m_ObjectHideFlags: 0
@@ -11398,6 +12001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630534901}
+  - component: {fileID: 1630534902}
   m_Layer: 5
   m_Name: Income Tax
   m_TagString: Untagged
@@ -11426,6 +12030,23 @@ RectTransform:
   m_AnchoredPosition: {x: 620, y: -1000}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1630534902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630534900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 4
 --- !u!1 &1648398201
 GameObject:
   m_ObjectHideFlags: 0
@@ -11752,6 +12373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699327135}
+  - component: {fileID: 1699327136}
   m_Layer: 5
   m_Name: Bond Street
   m_TagString: Untagged
@@ -11780,6 +12402,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -380}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1699327136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699327134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 34
 --- !u!1 &1716548869
 GameObject:
   m_ObjectHideFlags: 0
@@ -11865,6 +12504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1716609989}
+  - component: {fileID: 1716609990}
   m_Layer: 5
   m_Name: Go To Jail
   m_TagString: Untagged
@@ -11893,6 +12533,23 @@ RectTransform:
   m_AnchoredPosition: {x: 430, y: 430}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1716609990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716609988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 30
 --- !u!1 &1719176328
 GameObject:
   m_ObjectHideFlags: 0
@@ -11977,6 +12634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1726913266}
+  - component: {fileID: 1726913267}
   m_Layer: 5
   m_Name: Community Chest
   m_TagString: Untagged
@@ -12005,6 +12663,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -380}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1726913267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726913265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 17
 --- !u!1 &1729479306
 GameObject:
   m_ObjectHideFlags: 0
@@ -12093,6 +12768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743161444}
+  - component: {fileID: 1743161445}
   m_Layer: 5
   m_Name: Piccadilly
   m_TagString: Untagged
@@ -12121,6 +12797,23 @@ RectTransform:
   m_AnchoredPosition: {x: 780, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1743161445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743161443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 29
 --- !u!1 &1753664427
 GameObject:
   m_ObjectHideFlags: 0
@@ -12132,6 +12825,7 @@ GameObject:
   - component: {fileID: 1753664428}
   - component: {fileID: 1753664430}
   - component: {fileID: 1753664429}
+  - component: {fileID: 1753664431}
   m_Layer: 5
   m_Name: Tile Name
   m_TagString: Untagged
@@ -12191,7 +12885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Old Kent Road
+  m_Text: To Change Info Hover On A Tile
 --- !u!222 &1753664430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12200,6 +12894,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753664427}
   m_CullTransparentMesh: 1
+--- !u!114 &1753664431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753664427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1768639920
 GameObject:
   m_ObjectHideFlags: 0
@@ -12422,7 +13133,7 @@ GameObject:
   - component: {fileID: 1778213939}
   - component: {fileID: 1778213938}
   m_Layer: 5
-  m_Name: Tile Mortgage Value
+  m_Name: Tile Base Rent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12480,7 +13191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mortgage Value: 30'
+  m_Text: 'Rent : '
 --- !u!222 &1778213939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13154,6 +13865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970343666}
+  - component: {fileID: 1970343667}
   m_Layer: 5
   m_Name: Coventry Street
   m_TagString: Untagged
@@ -13182,6 +13894,23 @@ RectTransform:
   m_AnchoredPosition: {x: 620, y: 0}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1970343667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970343665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 27
 --- !u!1 &2015837608
 GameObject:
   m_ObjectHideFlags: 0
@@ -13508,6 +14237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2083421395}
+  - component: {fileID: 2083421396}
   m_Layer: 5
   m_Name: Whitehall
   m_TagString: Untagged
@@ -13536,6 +14266,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -700}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &2083421396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083421394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 13
 --- !u!1 &2089637434
 GameObject:
   m_ObjectHideFlags: 0
@@ -13681,7 +14428,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rent With Two Houses: 30'
+  m_Text: 'Rent With Two Houses : '
 --- !u!222 &2089704404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13790,6 +14537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2098224742}
+  - component: {fileID: 2098224743}
   m_Layer: 5
   m_Name: Mayfair
   m_TagString: Untagged
@@ -13818,6 +14566,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -780}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &2098224743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098224741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 39
 --- !u!1 &2105056190
 GameObject:
   m_ObjectHideFlags: 0
@@ -14143,6 +14908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139628116}
+  - component: {fileID: 2139628117}
   m_Layer: 5
   m_Name: Super Tax
   m_TagString: Untagged
@@ -14171,3 +14937,20 @@ RectTransform:
   m_AnchoredPosition: {x: 1000, y: -700}
   m_SizeDelta: {x: 80, y: 140}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &2139628117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139628115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df83d3446ee2bdd4381133dcf16e24e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 83006329}
+  dice: {fileID: 83006328}
+  turns: {fileID: 83006331}
+  uiScript: {fileID: 83006332}
+  tileNumber: 38

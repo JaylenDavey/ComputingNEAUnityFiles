@@ -7,7 +7,7 @@ public class ChangeMe : MonoBehaviour
     public board board;
     public dice dice;
     public turns turns;
-    public buttons buttons;
+    public UIScript uiScript;
 
     
 }

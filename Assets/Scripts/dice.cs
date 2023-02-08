@@ -4,8 +4,7 @@ public class dice : MonoBehaviour
 {
     public board board;
     public turns turns;
-    public buttons buttons;
-
+    public UIScript uiScript;
 
     public int[] numberOfDoubles = new int[] {0,0,0,0};
 

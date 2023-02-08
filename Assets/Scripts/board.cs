@@ -6,13 +6,14 @@ public class board : MonoBehaviour
 {
     public dice dice;
     public turns turns;
-    public buttons buttons;
+    public UIScript uiScript;
 
     public GameObject playerOne;
     public GameObject playerTwo;
     public GameObject playerThree;
     public GameObject playerFour;
     public TextAsset positionsJSON;
+    Collider2D infoTrigger;
 
     [System.Serializable]public class PositionInfo
     {

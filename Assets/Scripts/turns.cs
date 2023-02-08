@@ -4,7 +4,7 @@ public class turns : MonoBehaviour
 {
     public dice dice;
     public board board;
-    public buttons buttons;
+    public UIScript uiScript;
 
 
     public int totalPlayers = 4;
