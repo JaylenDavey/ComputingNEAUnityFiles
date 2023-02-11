@@ -15,6 +15,6 @@ public class TileInteraction : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {   
         Debug.Log("Mouse is over GameObject.");
-        uiScript.UpdatePropertyInformation(tileNumber);
+        uiScript.UpdateInformationUI(tileNumber);
     }   
 }

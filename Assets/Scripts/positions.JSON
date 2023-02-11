@@ -86,7 +86,7 @@
             "tileYPos": -430
         },
         {
-            "type": "Property",
+            "type": "Station",
             "name": "Kings Cross Station",
             "price": 200,
             "housePrice": null,
@@ -256,7 +256,7 @@
             "tileYPos": -80
         },
         {
-            "type": "Property",
+            "type": "Station",
             "name": "Marylebone Station",
             "price": 200,
             "housePrice": null,
@@ -426,7 +426,7 @@
             "tileYPos": 430
         },
         {
-            "type": "Property",
+            "type": "Station",
             "name": "Fenchurch St Station",
             "price": 200,
             "housePrice": null,
@@ -596,7 +596,7 @@
             "tileYPos": 80
         },
         {
-            "type": "Property",
+            "type": "Station",
             "name": "Liverpool Street Station",
             "price": 200,
             "housePrice": null,
