@@ -7,13 +7,9 @@ public class board : MonoBehaviour
     public dice dice;
     public turns turns;
     public UIScript uiScript;
+    public UITurns uiTurns;
 
-    public GameObject playerOne;
-    public GameObject playerTwo;
-    public GameObject playerThree;
-    public GameObject playerFour;
     public TextAsset positionsJSON;
-    Collider2D infoTrigger;
 
     [System.Serializable]public class PositionInfo
     {
@@ -40,19 +36,11 @@ public class board : MonoBehaviour
 
     public PositionList positionList = new PositionList();
 
-    [ContextMenu("Randomly Move Player")]
-    void Start()
-    {
-        GameObject[] playerCounterArray = new GameObject[] {playerOne,playerTwo,playerThree,playerFour};
-        positionList = JsonUtility.FromJson<PositionList>(positionsJSON.text);
-
-        turns.playerPositions[0] = Random.Range(0,40);
-
-        Debug.Log(positionList.position[turns.playerPositions[0]].name);
-
-        playerCounterArray[turns.currentPlayerForArrays].transform.localPosition = new Vector2(positionList.position[turns.playerPositions[0]].tileXPos,positionList.position[turns.playerPositions[0]].tileYPos);
-        
+    public void Awake()
+    {  
+        positionList = JsonUtility.FromJson<PositionList>(positionsJSON.text);  
     }
+
 
 
 

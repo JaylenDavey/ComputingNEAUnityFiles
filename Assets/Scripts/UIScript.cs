@@ -9,14 +9,6 @@ public class UIScript : MonoBehaviour
     public dice dice;
     public turns turns;
 
-    Button buyButton;
-    Button upgradeButton;
-    Button mortgageButton;
-    Button downgradeButton;
-    Button tradeButton;
-    Button diceButton;
-    Button endButton;
-
     public Text tileName;
     public Text tileType;
     public Text tilePrice;
@@ -27,37 +19,40 @@ public class UIScript : MonoBehaviour
     public Text tileFourHouse;
     public Text tileHotel;
     public Text tileUpgradeCost;
-    public Text tileOnwer;
+    public Text tileOwner;
         
 
-    public void UpdateOwnerInformation(int tileNumber)
+    private void UpdateOwnerInformation(int tileNumber)
     {
         if(board.positionList.position[tileNumber].owner == 6)
         {
-            tileOnwer.text = "Not Purchasable";
+            tileOwner.text = "Not Purchasable";
         }
         else if(!board.positionList.position[tileNumber].isOwned)
         {
-            tileOnwer.text = "Unowned";
+            tileOwner.text = "Unowned";
         }
         else
         {
-            tileOnwer.text = "Owned By : Player " + board.positionList.position[tileNumber].owner;
+            tileOwner.text = "Owned By : Player " + board.positionList.position[tileNumber].owner;
         }
     }
-
     private void UpdateSharedInformation(int tileNumber)
     {
         tileName.text =  board.positionList.position[tileNumber].name;
         tileType.text =  board.positionList.position[tileNumber].type;
     }
+
     private void UpdateStationInformation(int tileNumber)
     {
         tilePrice.text = "Buy Price : " + board.positionList.position[tileNumber].price.ToString();
-        tileRent.text = "Rent With One Owned Station : " + board.positionList.position[tileNumber].rent.ToString();
-        tileOneHouse.text = "Rent With Two Owned Stations: " + board.positionList.position[tileNumber].rentOneHouse.ToString();
-        tileTwoHouse.text = "Rent With Three Owned Stations : " + board.positionList.position[tileNumber].rentTwoHouse.ToString();
-        tileThreeHouse.text = "Rent With Four Owned Stations : " + board.positionList.position[tileNumber].rentThreeHouse.ToString();
+        tileRent.text = "";
+        tileOneHouse.text = "One Station Rent : " + board.positionList.position[tileNumber].rent.ToString();
+        tileTwoHouse.text = "Two Station Rent : " + board.positionList.position[tileNumber].rentOneHouse.ToString();
+        tileThreeHouse.text = "Three Station Rent : " + board.positionList.position[tileNumber].rentTwoHouse.ToString();
+        tileFourHouse.text = "Four Station Rent : " + board.positionList.position[tileNumber].rentThreeHouse.ToString();  
+        tileHotel.text = "";
+        tileUpgradeCost.text = "Upgrade Cost : " + board.positionList.position[tileNumber].housePrice.ToString();
     }
     private void UpdatePropertyInformation(int tileNumber)
     {
@@ -70,6 +65,95 @@ public class UIScript : MonoBehaviour
         tileHotel.text = "Rent With Hotel : " + board.positionList.position[tileNumber].rentHotel.ToString();
         tileUpgradeCost.text = "Upgrade Cost : " + board.positionList.position[tileNumber].housePrice.ToString();
     }
+    private void UpdateUtillityInformation(int tileNumber)
+    {
+        tilePrice.text = "Buy Price : " + board.positionList.position[tileNumber].price.ToString();
+        tileRent.text = "Rent Base : " + board.positionList.position[tileNumber].rent.ToString();
+        tileOneHouse.text = "Rent With One House : " + board.positionList.position[tileNumber].rentOneHouse.ToString();
+        tileTwoHouse.text = "Rent With Two House : " + board.positionList.position[tileNumber].rentTwoHouse.ToString();
+        tileThreeHouse.text = "Rent With Three House : " + board.positionList.position[tileNumber].rentThreeHouse.ToString();
+        tileFourHouse.text = "Rent With Four House : " + board.positionList.position[tileNumber].rentFourHouse.ToString();
+        tileHotel.text = "Rent With Hotel : " + board.positionList.position[tileNumber].rentHotel.ToString();
+        tileUpgradeCost.text = "Upgrade Cost : " + board.positionList.position[tileNumber].housePrice.ToString();
+    }
+    private void UpdateGoInformation(int tileNumber)
+    {
+        tilePrice.text = "When You Pass GO Collect 200";
+        tileRent.text = "";
+        tileOneHouse.text = "";
+        tileTwoHouse.text = "";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateParkingInformation(int tileNumber)
+    {
+        tilePrice.text = "This Tile Is Just A Place";
+        tileRent.text = "To Rest,";
+        tileOneHouse.text = "There Is No Reward For";
+        tileTwoHouse.text = "Landing Here";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateGoToJailInformation(int tileNumber)
+    {
+        tilePrice.text = "When You Pass GO Collect 200";
+        tileRent.text = "";
+        tileOneHouse.text = "";
+        tileTwoHouse.text = "";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateCommunityInformation(int tileNumber)
+    {
+        tilePrice.text = "When You Land On This Tile";
+        tileRent.text = "Pick Up A Community Chest Chard Card";
+        tileOneHouse.text = "";
+        tileTwoHouse.text = "";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateChanceInformation(int tileNumber)
+    {
+        tilePrice.text = "When You Land On This Tile";
+        tileRent.text = "Pick Up A Chance Card.";
+        tileOneHouse.text = "";
+        tileTwoHouse.text = "";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateTaxInformation(int tileNumber)
+    {
+        tilePrice.text = "When You Land Here";
+        tileRent.text = "You Pay : "+ board.positionList.position[tileNumber].rent;
+        tileOneHouse.text = "";
+        tileTwoHouse.text = "";
+        tileThreeHouse.text = "";
+        tileFourHouse.text = "";
+        tileHotel.text = "";
+        tileUpgradeCost.text = "";
+    }
+    private void UpdateJailInformation(int tileNumber)
+    {
+        tilePrice.text = "Prisoner Are Held Here";
+        tileRent.text = "";
+        if(turns.playerIsInJail[0])tileOneHouse.text = "Player 1 Is Currently In Jail";else tileOneHouse.text="";
+        if(turns.playerIsInJail[1])tileTwoHouse.text = "Player 2 Is Currently In Jail";else tileTwoHouse.text="";
+        if(turns.playerIsInJail[2])tileThreeHouse.text = "Player 3 Is Currently In Jail";else tileThreeHouse.text="";
+        if(turns.playerIsInJail[3])tileFourHouse.text = "Player 4 Is Currently In Jail";else tileFourHouse.text="";
+        tileHotel.text = "Options Are On The Right";
+        tileUpgradeCost.text = "When It Is Your Turn";
+    }
+
     public void UpdateInformationUI(int tileNumber)
     {
         UpdateOwnerInformation(tileNumber);
@@ -82,13 +166,45 @@ public class UIScript : MonoBehaviour
         {
             UpdateStationInformation(tileNumber);
         }
-
+        else if(GetTileType(tileNumber) == "Pass Go")
+        {
+            UpdateGoInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Free Parking")
+        {
+            UpdateParkingInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Go To Jail")
+        {
+            UpdateGoToJailInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Jail")
+        {
+            UpdateJailInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Chance")
+        {
+            UpdateChanceInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Community Chest")
+        {
+            UpdateCommunityInformation(tileNumber);
+        }
+        else if(GetTileType(tileNumber) == "Tax")
+        {
+            UpdateTaxInformation(tileNumber);
+        }
     }
 
     public string GetTileType(int tileNumber)
     {
         string whatType = board.positionList.position[tileNumber].type;
         return whatType;
+    }
+
+    public void MoneyInterfaceUpdater()
+    {
+
     }
 
 
