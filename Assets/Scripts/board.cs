@@ -15,6 +15,7 @@ public class board : MonoBehaviour
     {
         public string name;
         public string type;
+        public string colour;
         public int rent;
         public int price;
         public int housePrice;
@@ -25,6 +26,7 @@ public class board : MonoBehaviour
         public int rentHotel;
         public bool isOwned;
         public int owner;
+        public int housesNumber;
         public int tileXPos;
         public int tileYPos;
     }

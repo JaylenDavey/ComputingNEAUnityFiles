@@ -20,6 +20,11 @@ public class UIScript : MonoBehaviour
     public Text tileHotel;
     public Text tileUpgradeCost;
     public Text tileOwner;
+
+    public Text playerOneMoney;
+    public Text playerTwoMoney;
+    public Text playerThreeMoney;
+    public Text playerFourMoney;
         
 
     private void UpdateOwnerInformation(int tileNumber)
@@ -204,7 +209,10 @@ public class UIScript : MonoBehaviour
 
     public void MoneyInterfaceUpdater()
     {
-
+        playerOneMoney.text = "Player One : " + turns.playerMoney[0].ToString();
+        playerTwoMoney.text = "Player Two : " + turns.playerMoney[1].ToString();
+        playerThreeMoney.text = "Player Three : " + turns.playerMoney[2].ToString();
+        playerFourMoney.text = "Player Four : " + turns.playerMoney[3].ToString();
     }
 
 

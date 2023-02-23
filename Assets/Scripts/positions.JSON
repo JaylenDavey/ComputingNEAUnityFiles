@@ -3,6 +3,7 @@
         {
             "type": "Pass Go",
             "name": "Pass Go",
+            "colour": null,
             "rent": -200,
             "price": null,
             "housePrice": null,
@@ -20,6 +21,7 @@
         {
             "type": "Property",
             "name": "Old Kent Road",
+            "colour": "Brown",
             "price": 60,
             "housePrice": 50,
             "rent": 2,
@@ -37,6 +39,7 @@
         {
             "type": "Community Chest",
             "name": "Community Chest",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -54,6 +57,7 @@
         {
             "type": "Property",
             "name": "Whitechapel Road",
+            "colour": "Brown",
             "price": 60,
             "housePrice": 50,
             "rent": 4,
@@ -62,7 +66,7 @@
             "rentThreeHouse": 180,
             "rentFourHouse": 320,
             "rentHotel": 450,
-            "isOwned": true,
+            "isOwned": false,
             "owner": 0,
             "housesNumber": 0,
             "tileXPos": 160,
@@ -71,6 +75,7 @@
         {
             "type": "Tax",
             "name": "Income Tax",
+            "colour": null,
             "rent": 200,
             "price": null,
             "housePrice": null,
@@ -88,6 +93,7 @@
         {
             "type": "Station",
             "name": "Kings Cross Station",
+            "colour": "Station",
             "price": 200,
             "housePrice": null,
             "rent": null,
@@ -105,6 +111,7 @@
         {
             "type": "Property",
             "name": "The Angel Islington",
+            "colour": "Blue",
             "price": 100,
             "housePrice": 50,
             "rent": 6,
@@ -122,6 +129,7 @@
         {
             "type": "Chance",
             "name": "Chance",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -139,6 +147,7 @@
         {
             "type": "Property",
             "name": "Euston Road",
+            "colour": "Blue",
             "price": 100,
             "housePrice": 50,
             "rent": 6,
@@ -156,6 +165,7 @@
         {
             "type": "Property",
             "name": "Pentonville Road",
+            "colour": "Blue",
             "price": 120,
             "housePrice": 50,
             "rent": 8,
@@ -173,6 +183,7 @@
         {
             "type": "Jail",
             "name": "Jail",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -190,6 +201,7 @@
         {
             "type": "Property",
             "name": "Pall Mall",
+            "colour": "Pink",
             "price": 140,
             "housePrice": 100,
             "rent": 10,
@@ -207,6 +219,7 @@
         {
             "type": "Utillity",
             "name": "Electric Company",
+            "colour": "Utility",
             "rent": null,
             "price": 150,
             "housePrice": null,
@@ -224,6 +237,7 @@
         {
             "type": "Property",
             "name": "Whitehall",
+            "colour": "Pink",
             "price": 140,
             "housePrice": 100,
             "rent": 10,
@@ -241,6 +255,7 @@
         {
             "type": "Property",
             "name": "Northumberland Avenue",
+            "colour": "Pink",
             "price": 160,
             "housePrice": 100,
             "rent": 12,
@@ -258,6 +273,7 @@
         {
             "type": "Station",
             "name": "Marylebone Station",
+            "colour": "Station",
             "price": 200,
             "housePrice": null,
             "rent": null,
@@ -275,6 +291,7 @@
         {
             "type": "Property",
             "name": "Bow Street",
+            "colour": "Orange",
             "price": 180,
             "housePrice": 100,
             "rent": 14,
@@ -292,6 +309,7 @@
         {
             "type": "Community Chest",
             "name": "Community Chest",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -309,6 +327,7 @@
         {
             "type": "Property",
             "name": "Malborough Street",
+            "colour": "Orange",
             "price": 180,
             "housePrice": 100,
             "rent": 14,
@@ -326,6 +345,7 @@
         {
             "type": "Property",
             "name": "Vine Street",
+            "colour": "Orange",
             "price": 200,
             "housePrice": 100,
             "rent": 16,
@@ -343,6 +363,7 @@
         {
             "type": "Free Parking",
             "name": "Free Parking",
+            "colour": null,
             "price": null,
             "housePrice": null,
             "rent": null,
@@ -360,6 +381,7 @@
         {
             "type": "Property",
             "name": "Strand",
+            "colour": "Red",
             "price": 220,
             "housePrice": 150,
             "rent": 18,
@@ -377,6 +399,7 @@
         {
             "type": "Chance",
             "name": "Chance",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -394,6 +417,7 @@
         {
             "type": "Property",
             "name": "Fleet Street",
+            "colour": "Red",
             "price": 220,
             "housePrice": 150,
             "rent": 18,
@@ -411,6 +435,7 @@
         {
             "type": "Property",
             "name": "Trafalgar Square",
+            "colour": "Red",
             "price": 240,
             "housePrice": 150,
             "rent": 20,
@@ -428,6 +453,7 @@
         {
             "type": "Station",
             "name": "Fenchurch St Station",
+            "colour": "Station",
             "price": 200,
             "housePrice": null,
             "rent": null,
@@ -445,6 +471,7 @@
         {
             "type": "Property",
             "name": "Leicester Square",
+            "colour": "Yellow",
             "price": 260,
             "housePrice": 150,
             "rent": 22,
@@ -462,6 +489,7 @@
         {
             "type": "Property",
             "name": "Coventry Street",
+            "colour": "Yellow",
             "price": 260,
             "housePrice": 150,
             "rent": 22,
@@ -479,6 +507,7 @@
         {
             "type": "Utillity",
             "name": "Water Works",
+            "colour": "Utility",
             "rent": null,
             "price": 150,
             "housePrice": null,
@@ -496,6 +525,7 @@
         {
             "type": "Property",
             "name": "Piccadilly",
+            "colour": "Yellow",
             "price": 280,
             "housePrice": 150,
             "rent": 24,
@@ -513,6 +543,7 @@
         {
             "type": "Go To Jail",
             "name": "Go To Jail",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -530,6 +561,7 @@
         {
             "type": "Property",
             "name": "Regent Street",
+            "colour": "Green",
             "price": 300,
             "housePrice": 200,
             "rent": 26,
@@ -547,6 +579,7 @@
         {
             "type": "Property",
             "name": "Oxford Street",
+            "colour": "Green",
             "price": 300,
             "housePrice": 200,
             "rent": 26,
@@ -564,6 +597,7 @@
         {
             "type": "Community Chest",
             "name": "Community Chest",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -581,6 +615,7 @@
         {
             "type": "Property",
             "name": "Bond Street",
+            "colour": "Green",
             "price": 320,
             "housePrice": 200,
             "rent": 28,
@@ -598,6 +633,7 @@
         {
             "type": "Station",
             "name": "Liverpool Street Station",
+            "colour": "Station",
             "price": 200,
             "housePrice": null,
             "rent": null,
@@ -615,6 +651,7 @@
         {
             "type": "Chance",
             "name": "Chance",
+            "colour": null,
             "rent": null,
             "price": null,
             "housePrice": null,
@@ -632,6 +669,7 @@
         {
             "type": "Property",
             "name": "Park Lane",
+            "colour": "Purple",
             "price": 350,
             "housePrice": 200,
             "rent": 35,
@@ -649,6 +687,7 @@
         {
             "type": "Tax",
             "name": "Super Tax",
+            "colour": null,
             "rent": 100,
             "price": null,
             "housePrice": null,
@@ -666,6 +705,7 @@
         {
             "type": "Property",
             "name": "Mayfair",
+            "colour": "Purple",
             "price": 400,
             "housePrice": 200,
             "rent": 50,
