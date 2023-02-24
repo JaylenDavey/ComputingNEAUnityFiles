@@ -19,9 +19,10 @@ public class TileInteraction : MonoBehaviour, IPointerEnterHandler, IPointerClic
         houseNumberText = GetComponentInChildren<Text>();
         if(board.positionList.position[tileNumber].type == "Property")
         {
-            UpdatePropertyText();
+            StartCoroutine("UpdatePropertyText");
         }
-        else{
+        else
+        {
             houseNumberText.text = "";
         }
     }
@@ -40,7 +41,11 @@ public class TileInteraction : MonoBehaviour, IPointerEnterHandler, IPointerClic
 
     IEnumerator UpdatePropertyText()
     {
-        houseNumberText.text = board.positionList.position[tileNumber].housesNumber.ToString();
-        yield return new WaitForSecondsRealtime(0.05f);
-    }   
+        while(true)
+        {
+            houseNumberText.text = board.positionList.position[tileNumber].housesNumber.ToString();
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+    
 }

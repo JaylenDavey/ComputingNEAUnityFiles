@@ -14,14 +14,6 @@ public class UITurns : MonoBehaviour
 
     public GameObject[] playerCounters;
 
-    Button buyButton;
-    Button upgradeButton;
-    Button mortgageButton;
-    Button downgradeButton;
-    Button tradeButton;
-    Button diceButton;
-    Button endButton;
-
     public int selectedTile;
 
     public void Awake()
@@ -33,7 +25,8 @@ public class UITurns : MonoBehaviour
 
         playerCounters = new GameObject[] {playerOne, playerTwo, playerThree, playerFour};
     }
-    public void OnEndTurn()
+
+    public void EndTurn()
     {
         turns.currentPlayerTurn ++;
         if(turns.currentPlayerTurn == 5)turns.currentPlayerTurn=1;
@@ -43,12 +36,16 @@ public class UITurns : MonoBehaviour
         Debug.Log(turns.currentPlayerTurn.ToString() + turns.currentPlayerForArrays.ToString()); 
     }
 
-    public void StartTurnRollDice()
+    public void RollDice()
     {
         int diceroll = dice.RollDice();
         turns.playerPositions[turns.currentPlayerForArrays] += diceroll;
-        if(turns.playerPositions[turns.currentPlayerForArrays] > 39)turns.playerPositions[turns.currentPlayerForArrays] -= 40;
-
+        if(turns.playerPositions[turns.currentPlayerForArrays] > 39)
+        {
+            turns.playerPositions[turns.currentPlayerForArrays] -= 40;
+            turns.playerMoney[turns.currentPlayerForArrays] += 200;
+            uiScript.MoneyInterfaceUpdater();
+        }
         playerCounters[turns.currentPlayerForArrays].transform.localPosition = new Vector2(board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileXPos,board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileYPos);
 
         if(GetTileType() == "Property")
@@ -59,7 +56,23 @@ public class UITurns : MonoBehaviour
                 uiScript.MoneyInterfaceUpdater();
             }
         }
-          
+        if(GetTileType() == "Station")
+        {
+            Debug.Log("Landed On Station");
+            if(TileIsOwnedByAnotherPlayer())
+            {
+                Debug.Log("Landed On Owned Station");
+                ChargeStationRent();
+                uiScript.MoneyInterfaceUpdater();
+            }
+        }
+
+        if(GetTileType() == "Tax")
+        {
+            turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rent;
+            uiScript.MoneyInterfaceUpdater();
+
+        }  
     }
 
     public void BuyProperty()
@@ -70,6 +83,8 @@ public class UITurns : MonoBehaviour
             board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].isOwned = true;
             board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner = turns.currentPlayerTurn;
             turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].price;
+            turns.AddColourSet(turns.playerPositions[turns.currentPlayerForArrays], turns.currentPlayerForArrays);
+
             uiScript.MoneyInterfaceUpdater();
 
         }
@@ -83,6 +98,16 @@ public class UITurns : MonoBehaviour
         }
     }
 
+    public void UpgradeProperty()
+    {
+        if(UpgradeRequirementsCheck())
+        {
+            turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[selectedTile].price;
+            board.positionList.position[selectedTile].housesNumber ++;
+            uiScript.MoneyInterfaceUpdater();
+        }
+    }
+
     string GetTileType()
     {
         string type = board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].type;
@@ -90,7 +115,11 @@ public class UITurns : MonoBehaviour
         return type;
     }
 
-
+    bool UpgradeRequirementsCheck() // Checks if the player owns the tile and its set, and checks if the player can afford to upgrade, as well as checking if the tile has less than 5 houses.
+    {
+        if(board.positionList.position[selectedTile].owner == turns.currentPlayerTurn && turns.PlayerOwnsEntireSet(selectedTile, turns.currentPlayerForArrays) && turns.playerMoney[turns.currentPlayerForArrays] > board.positionList.position[selectedTile].housePrice && board.positionList.position[selectedTile].housesNumber < 5)return true;
+        else return false;
+    }
 
 
 
@@ -101,9 +130,40 @@ public class UITurns : MonoBehaviour
         return board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].housesNumber;
     }
 
+    int NumberOfOwnedStations()
+    {
+        return turns.stationOwnership[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1];
+    }
+
     bool TileIsOwnedByAnotherPlayer()
     {
         return board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].isOwned && board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner != turns.currentPlayerTurn;
+    }
+
+    void ChargeStationRent()
+    {
+                Debug.Log("Attempting To Charge Rent");
+                Debug.Log(NumberOfOwnedStations());
+                if(NumberOfOwnedStations() == 1)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentOneHouse;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentOneHouse;
+                }
+                if(NumberOfOwnedStations() == 2)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentTwoHouse;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentTwoHouse;
+                }
+                if(NumberOfOwnedStations() == 3)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentThreeHouse;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentThreeHouse;
+                }
+                if(NumberOfOwnedStations() == 4)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentFourHouse;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentFourHouse;
+                }     
     }
 
     void ChargeRent()

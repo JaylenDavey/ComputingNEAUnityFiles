@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class turns : MonoBehaviour
 {
-    public dice dice;
     public board board;
-    public UIScript uiScript;
-
 
     public int totalPlayers = 4;
     public int currentPlayerTurn = 1;
@@ -29,7 +26,7 @@ public class turns : MonoBehaviour
 
 
 
-    string DetermineColourSet(int tileNumber)
+    public string DetermineColourSet(int tileNumber)
     {
         if(board.positionList.position[tileNumber].colour == "Brown")
         {
@@ -73,48 +70,129 @@ public class turns : MonoBehaviour
         else return null;
     }
 
-    void AddColourSet(int tileNumber, int playerToAddTo)
+    public void AddColourSet(int tileNumber, int playerToEdit)
     {
         if(board.positionList.position[tileNumber].colour == "Brown")
         {
-            brownSetOwnership[playerToAddTo] ++;
+            brownSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Blue")
         {
-            blueSetOwnership[playerToAddTo] ++;
+            blueSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Pink")
         {
-            pinkSetOwnership[playerToAddTo] ++;
+            pinkSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Orange")
         {
-            orangeSetOwnership[playerToAddTo] ++;
+            orangeSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Red")
         {
-            redSetOwnership[playerToAddTo] ++;
+            redSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Yellow")
         {
-            yellowSetOwnership[playerToAddTo] ++;
+            yellowSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Green")
         {
-            greenSetOwnership[playerToAddTo] ++;
+            greenSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Purple")
         {
-            purpleSetOwnership[playerToAddTo] ++;
+            purpleSetOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Station")
         {
-            stationOwnership[playerToAddTo] ++;
+            stationOwnership[playerToEdit] ++;
         }
         if(board.positionList.position[tileNumber].colour == "Utility")
         {
-            UtilityOwnership[playerToAddTo] ++;
+            UtilityOwnership[playerToEdit] ++;
         }
+    }
+
+    public void RemoveColourSet(int tileNumber, int playerToEdit)
+    {
+        if(board.positionList.position[tileNumber].colour == "Brown")
+        {
+            brownSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Blue")
+        {
+            blueSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Pink")
+        {
+            pinkSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Orange")
+        {
+            orangeSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Red")
+        {
+            redSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Yellow")
+        {
+            yellowSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Green")
+        {
+            greenSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Purple")
+        {
+            purpleSetOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Station")
+        {
+            stationOwnership[playerToEdit] --;
+        }
+        if(board.positionList.position[tileNumber].colour == "Utility")
+        {
+            UtilityOwnership[playerToEdit] --;
+        }
+    }
+
+    public bool PlayerOwnsEntireSet(int tileNumber, int playerToCheck)
+    {
+        if(board.positionList.position[tileNumber].colour == "Brown" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Blue" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Pink" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Orange" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Red" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Yellow" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Green" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        if(board.positionList.position[tileNumber].colour == "Purple" && brownSetOwnership[playerToCheck] == 2)
+        {
+            return true;
+        }
+        else return false;
     }
 
 }

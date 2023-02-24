@@ -4791,7 +4791,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8405794793670840922}
         m_TargetAssemblyTypeName: UITurns, Assembly-CSharp
-        m_MethodName: OnEndTurn
+        m_MethodName: EndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6101,7 +6101,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 745713106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8405794793670840922}
+        m_TargetAssemblyTypeName: UITurns, Assembly-CSharp
+        m_MethodName: UpgradeProperty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &745713106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10637,7 +10649,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8405794793670840922}
         m_TargetAssemblyTypeName: UITurns, Assembly-CSharp
-        m_MethodName: StartTurnRollDice
+        m_MethodName: RollDice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18050,9 +18062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8da9d88173d96e47804bb94aab41a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 8405794793670840921}
   board: {fileID: 83006328}
-  uiScript: {fileID: 83006332}
   totalPlayers: 4
   currentPlayerTurn: 1
   currentPlayerForArrays: 0
@@ -18060,3 +18070,13 @@ MonoBehaviour:
   playerIsInJail: 00000000
   playerMoney: dc050000dc050000dc050000dc050000
   playerHasLost: 00000000
+  brownSetOwnership: 00000000000000000000000000000000
+  blueSetOwnership: 00000000000000000000000000000000
+  pinkSetOwnership: 00000000000000000000000000000000
+  orangeSetOwnership: 00000000000000000000000000000000
+  redSetOwnership: 00000000000000000000000000000000
+  yellowSetOwnership: 00000000000000000000000000000000
+  greenSetOwnership: 00000000000000000000000000000000
+  purpleSetOwnership: 00000000000000000000000000000000
+  stationOwnership: 00000000000000000000000000000000
+  UtilityOwnership: 00000000000000000000000000000000

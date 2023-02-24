@@ -52,10 +52,10 @@ public class UIScript : MonoBehaviour
     {
         tilePrice.text = "Buy Price : " + board.positionList.position[tileNumber].price.ToString();
         tileRent.text = "";
-        tileOneHouse.text = "One Station Rent : " + board.positionList.position[tileNumber].rent.ToString();
-        tileTwoHouse.text = "Two Station Rent : " + board.positionList.position[tileNumber].rentOneHouse.ToString();
-        tileThreeHouse.text = "Three Station Rent : " + board.positionList.position[tileNumber].rentTwoHouse.ToString();
-        tileFourHouse.text = "Four Station Rent : " + board.positionList.position[tileNumber].rentThreeHouse.ToString();  
+        tileOneHouse.text = "One Station Rent : " + board.positionList.position[tileNumber].rentOneHouse.ToString();
+        tileTwoHouse.text = "Two Station Rent : " + board.positionList.position[tileNumber].rentTwoHouse.ToString();
+        tileThreeHouse.text = "Three Station Rent : " + board.positionList.position[tileNumber].rentThreeHouse.ToString();
+        tileFourHouse.text = "Four Station Rent : " + board.positionList.position[tileNumber].rentFourHouse.ToString();  
         tileHotel.text = "";
         tileUpgradeCost.text = "Upgrade Cost : " + board.positionList.position[tileNumber].housePrice.ToString();
     }
