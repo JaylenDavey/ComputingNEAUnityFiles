@@ -43,8 +43,17 @@ public class TileInteraction : MonoBehaviour, IPointerEnterHandler, IPointerClic
     {
         while(true)
         {
-            houseNumberText.text = board.positionList.position[tileNumber].housesNumber.ToString();
-            yield return new WaitForSeconds(0.05f);
+            if(board.positionList.position[tileNumber].housesNumber==0)
+            {
+                houseNumberText.text = "";
+                yield return new WaitForSeconds(0.05f);
+            }
+            else
+            {
+                houseNumberText.text = board.positionList.position[tileNumber].housesNumber.ToString();
+                yield return new WaitForSeconds(0.05f);
+            }
+
         }
     }
     

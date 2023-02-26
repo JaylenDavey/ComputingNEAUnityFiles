@@ -375,8 +375,8 @@
             "isOwned": true,
             "owner": 6,
             "housesNumber": 0,
-            "tileXPos": 430,
-            "tileYPos": -430
+            "tileXPos": -430,
+            "tileYPos": 430
         },
         {
             "type": "Property",

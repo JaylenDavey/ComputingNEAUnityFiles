@@ -47,23 +47,22 @@ public class UITurns : MonoBehaviour
             uiScript.MoneyInterfaceUpdater();
         }
         playerCounters[turns.currentPlayerForArrays].transform.localPosition = new Vector2(board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileXPos,board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileYPos);
-
-        if(GetTileType() == "Property")
+        if(TileIsOwnedByAnotherPlayer())
         {
-            if(TileIsOwnedByAnotherPlayer())
-            {
+            if(GetTileType() == "Property")
+            {            
                 ChargeRent();
                 uiScript.MoneyInterfaceUpdater();
             }
-        }
-        if(GetTileType() == "Station")
-        {
-            Debug.Log("Landed On Station");
-            if(TileIsOwnedByAnotherPlayer())
+            if(GetTileType() == "Station")
             {
-                Debug.Log("Landed On Owned Station");
                 ChargeStationRent();
-                uiScript.MoneyInterfaceUpdater();
+                uiScript.MoneyInterfaceUpdater(); 
+            }
+            if(GetTileType() == "Utility")
+            {
+                ChargeUtilityRent(diceroll);
+                uiScript.MoneyInterfaceUpdater(); 
             }
         }
 
@@ -108,6 +107,33 @@ public class UITurns : MonoBehaviour
         }
     }
 
+    public void DowngradeProperty()
+    {
+        if(DowngradeRequirementsCheck())
+        {
+            turns.playerMoney[turns.currentPlayerForArrays] += board.positionList.position[selectedTile].price;
+            board.positionList.position[selectedTile].housesNumber --;
+            uiScript.MoneyInterfaceUpdater();
+        }
+    }
+
+    public void MortgageProperty()
+    {
+            board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].isOwned = false;
+            board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner = turns.currentPlayerTurn;
+            turns.playerMoney[turns.currentPlayerForArrays] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].price/2;
+    }
+
+    public void UnMortgageProperty()
+    {
+        if(turns.playerMoney[turns.currentPlayerForArrays]>=board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].price/2)
+        {
+            board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].isOwned = true;
+            board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner = turns.currentPlayerTurn;
+            turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].price/2;
+        }
+    }
+
     string GetTileType()
     {
         string type = board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].type;
@@ -118,6 +144,12 @@ public class UITurns : MonoBehaviour
     bool UpgradeRequirementsCheck() // Checks if the player owns the tile and its set, and checks if the player can afford to upgrade, as well as checking if the tile has less than 5 houses.
     {
         if(board.positionList.position[selectedTile].owner == turns.currentPlayerTurn && turns.PlayerOwnsEntireSet(selectedTile, turns.currentPlayerForArrays) && turns.playerMoney[turns.currentPlayerForArrays] > board.positionList.position[selectedTile].housePrice && board.positionList.position[selectedTile].housesNumber < 5)return true;
+        else return false;
+    }
+
+    bool DowngradeRequirementsCheck() // Checks if the player owns the tile and its set, as well as checking if the tile has more than 0 houses.
+    {
+        if(board.positionList.position[selectedTile].owner == turns.currentPlayerTurn && turns.PlayerOwnsEntireSet(selectedTile, turns.currentPlayerForArrays) && board.positionList.position[selectedTile].housesNumber < 0)return true;
         else return false;
     }
 
@@ -135,6 +167,11 @@ public class UITurns : MonoBehaviour
         return turns.stationOwnership[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1];
     }
 
+    int NumberOfOwnedUtilities()
+    {
+        return turns.UtilityOwnership[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1];
+    }
+
     bool TileIsOwnedByAnotherPlayer()
     {
         return board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].isOwned && board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner != turns.currentPlayerTurn;
@@ -142,8 +179,6 @@ public class UITurns : MonoBehaviour
 
     void ChargeStationRent()
     {
-                Debug.Log("Attempting To Charge Rent");
-                Debug.Log(NumberOfOwnedStations());
                 if(NumberOfOwnedStations() == 1)
                 {
                     turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentOneHouse;
@@ -164,6 +199,20 @@ public class UITurns : MonoBehaviour
                     turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentFourHouse;
                     turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentFourHouse;
                 }     
+    }
+
+    void ChargeUtilityRent(int diceroll)
+    {
+                if(NumberOfOwnedUtilities() == 1)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= 4 * diceroll;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += 4 * diceroll;
+                }
+                if(NumberOfOwnedUtilities() == 2)
+                {
+                    turns.playerMoney[turns.currentPlayerForArrays] -= 10 * diceroll;
+                    turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += 10 * diceroll;
+                } 
     }
 
     void ChargeRent()

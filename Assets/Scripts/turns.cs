@@ -164,31 +164,31 @@ public class turns : MonoBehaviour
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Blue" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Blue" && blueSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Pink" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Pink" && pinkSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Orange" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Orange" && brownSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Red" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Red" && redSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Yellow" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Yellow" && yellowSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Green" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Green" && greenSetOwnership[playerToCheck] == 3)
         {
             return true;
         }
-        if(board.positionList.position[tileNumber].colour == "Purple" && brownSetOwnership[playerToCheck] == 2)
+        if(board.positionList.position[tileNumber].colour == "Purple" && purpleSetOwnership[playerToCheck] == 2)
         {
             return true;
         }
