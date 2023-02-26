@@ -52,32 +52,7 @@ public class UITurns : MonoBehaviour
             turns.playerMoney[turns.currentPlayerForArrays] += 200;
             uiScript.MoneyInterfaceUpdater();
         }
-        playerCounters[turns.currentPlayerForArrays].transform.localPosition = new Vector2(board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileXPos,board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileYPos);
-        if(TileIsOwnedByAnotherPlayer())
-        {
-            if(GetTileType() == "Property")
-            {            
-                ChargeRent();
-                uiScript.MoneyInterfaceUpdater();
-            }
-            if(GetTileType() == "Station")
-            {
-                ChargeStationRent();
-                uiScript.MoneyInterfaceUpdater(); 
-            }
-            if(GetTileType() == "Utility")
-            {
-                ChargeUtilityRent(diceroll);
-                uiScript.MoneyInterfaceUpdater(); 
-            }
-        }
-
-        if(GetTileType() == "Tax")
-        {
-            turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rent;
-            uiScript.MoneyInterfaceUpdater();
-
-        }  
+        MovePlayer(diceroll);
     }
 
     public void BuyProperty()
@@ -109,6 +84,8 @@ public class UITurns : MonoBehaviour
         {
             turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[selectedTile].price;
             board.positionList.position[selectedTile].housesNumber ++;
+            if(board.positionList.position[selectedTile].housesNumber < 5)turns.playerTotalHouses[turns.currentPlayerForArrays] ++;
+            if(board.positionList.position[selectedTile].housesNumber == 5)turns.playerTotalHotels[turns.currentPlayerForArrays] ++;
             uiScript.MoneyInterfaceUpdater();
         }
     }
@@ -119,6 +96,9 @@ public class UITurns : MonoBehaviour
         {
             turns.playerMoney[turns.currentPlayerForArrays] += board.positionList.position[selectedTile].price;
             board.positionList.position[selectedTile].housesNumber --;
+            if(board.positionList.position[selectedTile].housesNumber < 5)turns.playerTotalHouses[turns.currentPlayerForArrays] --;
+            if(board.positionList.position[selectedTile].housesNumber == 5)turns.playerTotalHotels[turns.currentPlayerForArrays] --;
+            
             uiScript.MoneyInterfaceUpdater();
         }
     }
@@ -276,5 +256,36 @@ public class UITurns : MonoBehaviour
                     turns.playerMoney[board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].owner - 1] += board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rentHotel;
                 }        
     }
+
+    public void MovePlayer(int diceroll)
+    {
+        playerCounters[turns.currentPlayerForArrays].transform.localPosition = new Vector2(board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileXPos,board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].tileYPos);
+        if(TileIsOwnedByAnotherPlayer())
+        {
+            if(GetTileType() == "Property")
+            {            
+                ChargeRent();
+                uiScript.MoneyInterfaceUpdater();
+            }
+            if(GetTileType() == "Station")
+            {
+                ChargeStationRent();
+                uiScript.MoneyInterfaceUpdater(); 
+            }
+            if(GetTileType() == "Utility")
+            {
+                ChargeUtilityRent(diceroll);
+                uiScript.MoneyInterfaceUpdater(); 
+            }
+        }
+
+        if(GetTileType() == "Tax")
+        {
+            turns.playerMoney[turns.currentPlayerForArrays] -= board.positionList.position[turns.playerPositions[turns.currentPlayerForArrays]].rent;
+            uiScript.MoneyInterfaceUpdater();
+
+        }  
+    }
+
 }
 

@@ -12,6 +12,10 @@ public class turns : MonoBehaviour
     public bool[] playerIsInJail = new bool[] {false,false,false,false};
     public int[] playerMoney = new int[] {1500,1500,1500,1500};
     public bool[] playerHasLost = new bool[] {false,false,false,false};
+    public bool[] playerHasGetOutOfJailFreeCard = new bool[] {false, false, false, false};
+
+    public int[] playerTotalHouses = new int[] {0,0,0,0};
+    public int[] playerTotalHotels = new int[] {0,0,0,0};
 
     public int[] brownSetOwnership = new int[] {0,0,0,0};
     public int[] blueSetOwnership = new int[] {0,0,0,0};
