@@ -11,6 +11,8 @@ public class UITurns : MonoBehaviour
     public UIScript uiScript;
 
     public Text playerTurn;
+    
+    public Image playerOne,playerTwo,playerThree,playerFour,UIColor,UIColor2;
 
     public GameObject[] playerCounters;
 
@@ -24,6 +26,8 @@ public class UITurns : MonoBehaviour
         GameObject playerFour = GameObject.Find("PlayerCounter 4");
 
         playerCounters = new GameObject[] {playerOne, playerTwo, playerThree, playerFour};
+
+        ChangeUIColour();
     }
 
     public void EndTurn()
@@ -32,6 +36,8 @@ public class UITurns : MonoBehaviour
         if(turns.currentPlayerTurn == 5)turns.currentPlayerTurn=1;
         turns.currentPlayerForArrays = turns.currentPlayerTurn - 1;
         playerTurn.text = "Player " + turns.currentPlayerTurn.ToString();
+
+        ChangeUIColour();
 
         Debug.Log(turns.currentPlayerTurn.ToString() + turns.currentPlayerForArrays.ToString()); 
     }
@@ -155,7 +161,29 @@ public class UITurns : MonoBehaviour
 
 
 
-
+    void ChangeUIColour()
+    {
+        if(turns.currentPlayerTurn == 1)
+        {
+            UIColor.color = playerOne.color;
+            UIColor2.color = playerOne.color;
+        }
+        if(turns.currentPlayerTurn == 2)
+        {
+            UIColor.color = playerTwo.color;
+            UIColor2.color = playerTwo.color;
+        }
+        if(turns.currentPlayerTurn == 3)
+        {
+            UIColor.color = playerThree.color;
+            UIColor2.color = playerThree.color;
+        }
+        if(turns.currentPlayerTurn == 4)
+        {
+            UIColor.color = playerFour.color;
+            UIColor2.color = playerFour.color;
+        }
+    }
 
     int NumberOfHouses()
     {
