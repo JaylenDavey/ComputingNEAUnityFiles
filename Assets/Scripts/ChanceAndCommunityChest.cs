@@ -126,4 +126,5 @@ public class NewBehaviourScript : MonoBehaviour
             turns.playerMoney[turns.currentPlayerForArrays] =+ 150;
         }
     }
+
 }
