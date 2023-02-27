@@ -9,6 +9,7 @@ public class UITurns : MonoBehaviour
     public dice dice;
     public board board;
     public UIScript uiScript;
+    public ChanceAndCommunityChest chanceAndCommunityChest;
 
     public Text playerTurn;
     
@@ -276,6 +277,14 @@ public class UITurns : MonoBehaviour
             {
                 ChargeUtilityRent(diceroll);
                 uiScript.MoneyInterfaceUpdater(); 
+            }
+            if(GetTileType() == "Chance")
+            {
+                chanceAndCommunityChest.Chance();
+            }
+            if(GetTileType() == "Community Chest")
+            {
+                chanceAndCommunityChest.CommuntiyChest();
             }
         }
 
