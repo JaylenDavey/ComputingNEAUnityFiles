@@ -750,6 +750,7 @@ GameObject:
   - component: {fileID: 8405794793670840921}
   - component: {fileID: 8405794793670840927}
   - component: {fileID: 83006328}
+  - component: {fileID: 83006329}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -776,6 +777,22 @@ MonoBehaviour:
   positionsJSON: {fileID: 4900000, guid: 89b42bfeba78ba4429428f80e54782fe, type: 3}
   positionList:
     position: []
+--- !u!114 &83006329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68588a5f82cab849bee5f725c364551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turns: {fileID: 8405794793670840927}
+  UITurns: {fileID: 8405794793670840922}
+  UIScript: {fileID: 83006332}
+  board: {fileID: 83006328}
 --- !u!4 &83006330
 Transform:
   m_ObjectHideFlags: 0
@@ -18288,6 +18305,7 @@ MonoBehaviour:
   dice: {fileID: 8405794793670840921}
   board: {fileID: 83006328}
   uiScript: {fileID: 83006332}
+  chanceAndCommunityChest: {fileID: 83006329}
   playerTurn: {fileID: 522486264}
   playerOne: {fileID: 18283356}
   playerTwo: {fileID: 650698811}
@@ -18317,6 +18335,9 @@ MonoBehaviour:
   playerIsInJail: 00000000
   playerMoney: dc050000dc050000dc050000dc050000
   playerHasLost: 00000000
+  playerHasGetOutOfJailFreeCard: 00000000
+  playerTotalHouses: 00000000000000000000000000000000
+  playerTotalHotels: 00000000000000000000000000000000
   brownSetOwnership: 00000000000000000000000000000000
   blueSetOwnership: 00000000000000000000000000000000
   pinkSetOwnership: 00000000000000000000000000000000

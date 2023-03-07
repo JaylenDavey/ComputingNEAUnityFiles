@@ -36,6 +36,10 @@ public class TileInteraction : MonoBehaviour, IPointerEnterHandler, IPointerClic
     {
         UITurns.selectedTile = tileNumber;
         Debug.Log(tileNumber + " Selected: " + board.positionList.position[tileNumber].name);
+        UITurns.DowngradePropertyButtonCheck();
+        UITurns.UpgradePropertyButtonCheck();
+        UITurns.MortgagePropertyButtonCheck();
+        UITurns.UnmortgagePropertyButtonCheck();
     }
 
 

@@ -10,6 +10,7 @@ public class turns : MonoBehaviour
 
     public int[] playerPositions = new int[] {0,0,0,0};
     public bool[] playerIsInJail = new bool[] {false,false,false,false};
+    public int[] playerTurnsInJail = new int[] {0,0,0,0};
     public int[] playerMoney = new int[] {1500,1500,1500,1500};
     public bool[] playerHasLost = new bool[] {false,false,false,false};
     public bool[] playerHasGetOutOfJailFreeCard = new bool[] {false, false, false, false};

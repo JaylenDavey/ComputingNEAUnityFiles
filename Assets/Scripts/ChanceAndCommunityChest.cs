@@ -82,7 +82,7 @@ public class ChanceAndCommunityChest : MonoBehaviour
         if(whatCard == 10)
         {
             Debug.Log("Go to Jail. Go directly to jail, do not pass Go, do not collect £200");
-            turns.playerIsInJail[turns.currentPlayerForArrays] = true;
+            UITurns.MovePlayerToJail();
         }
         if(whatCard == 11)
         {
@@ -129,6 +129,11 @@ public class ChanceAndCommunityChest : MonoBehaviour
             turns.playerMoney[turns.currentPlayerForArrays] += 150;
             UIScript.MoneyInterfaceUpdater();
         }
+        if(whatCard == 16)
+        {
+            Debug.Log("Get Out Of Jail Free Card");
+            turns.playerHasGetOutOfJailFreeCard[turns.currentPlayerForArrays] = true;
+        }
     }
     
     public void CommuntiyChest()
@@ -169,7 +174,7 @@ public class ChanceAndCommunityChest : MonoBehaviour
         if(whatCard == 6)
         {
             Debug.Log("Go to Jail. Go directly to jail, do not pass Go, do not collect £200");
-            turns.playerIsInJail[turns.currentPlayerForArrays] = true;
+            UITurns.MovePlayerToJail();
         }
         if(whatCard == 7)
         {
